@@ -1,4 +1,4 @@
-class AdventureScene extends Phaser.Scene {
+class GameScene extends Phaser.Scene {
     preload(){
         this.load.json('dialogue', 'dialogue.json');
         this.load.json('mouseover', 'mouseover.json');
