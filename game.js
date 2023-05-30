@@ -35,6 +35,132 @@ class Test2 extends GameScene{
 
 
 
+class Intro1 extends GameScene{
+    constructor(){ super('intro1', "home") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+
+    }
+}
+
+
+
+class Intro2 extends GameScene{
+    constructor(){ super('intro2', "grocery store") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Intro3 extends GameScene{
+    constructor(){ super('intro3', "outside apartment") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Interrogation1 extends GameScene{
+    constructor(){ super('intero1', "medbay") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Interrogation2 extends GameScene{
+    constructor(){ super('intero2', "brig") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Interrogation3 extends GameScene{
+    constructor(){ super('intero3', "bridge") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Outro extends GameScene{
+    constructor(){ super('outro', "outro") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Sagittarius extends GameScene{
+    constructor(){ super('hub', "sagittarius hub") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class SagittariusCafe extends GameScene{
+    constructor(){ super('hubcafe', "sagittarius coffee shop") };
+
+    afterCreate(){
+
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
 class GameMenu extends MenuScene{
     
 }
@@ -83,6 +209,6 @@ const game = new Phaser.Game({
         height: 1080
     },
     //every scene needs to be in here, so dont forget
-    scene: [Loader, Test, Test2],
+    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe],
     title: "to be determined",
 });
