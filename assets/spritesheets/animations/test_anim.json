@@ -6,7 +6,7 @@
             "startFrame": 0,
             "endFrame": 1,
             "firstFrame": 0,
-            "frameRate": 5,
+            "frameRate": 1.167,
             "repeat": -1
         },
         {
@@ -15,7 +15,7 @@
             "startFrame": 0,
             "endFrame": 1,
             "firstFrame": 0,
-            "frameRate": 10,
+            "frameRate": 1.72,
             "repeat": -1
         }
     ]

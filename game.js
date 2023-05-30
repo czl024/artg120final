@@ -2,18 +2,19 @@ class Test extends GameScene{
     constructor(){ super('test', "test scene") };
 
     afterCreate(){
-        let key = 'orb';
-        let morbing = this.add.sprite(this.w2 / 2, this.h2, key);
-        morbing.play('morb2');
-
-        let orb = new storyObject(this, key, 3 * this.w2 / 2, this.h2, false, false, true);
+        let orb = new storyObject(this, 'orb', 3 * this.w2 / 2, this.h2, false, true, false);
         orb.render.play('morb2');
         orb.render.setDepth(99);
+        orb.addDialogue([], ["talked to orb"], [], [], "intro");
+        orb.addDialogue(["talked to orb"], [], ["chikn"], [], "introC");
+        orb.addDialogue(["talked to orb"], [], [], [], "introZ");
+        
+        
+        
+        
 
-        let chikn = new storyObject(this, "chikn", this.w2, this.h2, false, false, false);
+        let chikn = new storyObject(this, "chikn", this.w2, this.h2, true, false, true);
         chikn.render.setDepth(0);
-
-        let test = new testobj(this, key, this.w2, this.h2);
     }
 }
 
