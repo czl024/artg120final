@@ -2,12 +2,18 @@ class Test extends GameScene{
     constructor(){ super('test', "test scene") };
 
     afterCreate(){
-        //let morbing = this.add.sprite(this.w2, this.h2, 'test')
-        //morbing.play('morb2');
+        let key = 'orb';
+        let morbing = this.add.sprite(this.w2 / 2, this.h2, key);
+        morbing.play('morb2');
 
-        let orb = new storyObject(this, 'orb', this.w2, this.h2, false, false, false);
-        //orb.play('morb');
-        this.add.image(this.w2, this.h2, 'orb');
+        let orb = new storyObject(this, key, 3 * this.w2 / 2, this.h2, false, false, true);
+        orb.render.play('morb2');
+        orb.render.setDepth(99);
+
+        let chikn = new storyObject(this, "chikn", this.w2, this.h2, false, false, false);
+        chikn.render.setDepth(0);
+
+        let test = new testobj(this, key, this.w2, this.h2);
     }
 }
 
@@ -29,31 +35,19 @@ class Loader extends Phaser.Scene{
     constructor(){ super('loader', "load scene") };
 
     preload(){
-        this.load.json('sprites', `assets/spritesheets/spritesheets.json`);
-    }
-
-    create(){
-        this.sprites = this.cache.json.get('sprites');
-        let thisjson = this.sprites.sprites;
-
-        this.load.spritesheet('orb', `assets/spritesheets/test.png`,{
+        this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
             frameWidth: 368,
             frameHeight: 360,
+            endFrame: 1
         });
 
-        this.load.spritesheet('chikn', "assets/spritesheets/chikn.png",{
+        this.load.spritesheet('chikn', "assets/spritesheets/chikn.jpg",{
             frameWidth: 1243,
             frameHeight: 1280,
         });
+    }
 
-        
-        thisjson.forEach((x) => {
-            this.load.spritesheet(x.key, x.path,{
-                frameWidth: x.frameWidth,
-                frameHeight: x.frameHeight,
-            });
-        });
-        
+    create(){
         this.scene.start('test');
     }
 }

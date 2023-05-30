@@ -22,9 +22,12 @@ class GameScene extends Phaser.Scene{
     items;          //inventory
     flags;          //story flags, invisible to player
     relationships;  //we'll see if we even implement this
+    descText;       //the text currently showing in the descBox
     queuedMessage;  //after hovering over something for long enough, the message to show in a descriptive text box
     descBox;        //this will be the object that shows text when hovering over something
-    storyObjects;   //SHOULD be used to store all storyObjects
+    messageTime;    //the time a message was shown
+    msgTimeLength;  //the duration a message should be shown
+    newMsg;         //a flag to tell if a message is new
 
 
 
@@ -32,7 +35,6 @@ class GameScene extends Phaser.Scene{
         super(key);
         this.sceneName = key;
         this.name = name;
-        this.storyObjects = {};
     }
 
 
@@ -54,23 +56,28 @@ class GameScene extends Phaser.Scene{
         this.height = this.game.config.height;  //height of the game
         this.w2 = this.width / 2;               //width of the game / 2
         this.h2 = this.height / 2;              //height of the game / 2
-        
+        this.newMsg = false;
     }
 
 
 
     create(){
         this.dialogue = this.cache.json.get('dialogue');
-        this.mouseover = this.cache.json.get('mouseover');
+        this.mouseover = this.cache.json.get('mouseover').mouseover;
         this.animations = this.cache.json.get('anims');
         this.createAnimations();
+
+        this.descBox = this.add.text(this.w2, this.h2, "", {
+            fontSize: 100
+        });
+        this.descBox.setDepth(100);
+
         this.afterCreate();
     }
 
 
 
     createAnimations(){
-        console.log(this.animations.animations);
         let thisjson = this.animations.animations;
         thisjson.forEach((x) => {
             const anim = {
@@ -89,24 +96,23 @@ class GameScene extends Phaser.Scene{
 
 
 
-    update(){
-        
+    update(time, delta){
+        this.descBox.setText(this.descText);
+
+        if(this.newMsg){
+            this.messageTime = time;
+            this.newMsg = false;
+        }
+        if(!this.newMsg && this.descText != ""){
+            if(time - this.messageTime >= this.msgTimeLength){
+                this.descText = this.queuedMessage;
+            }
+        }
     }
-
-
-
-    //CREATE MUST BE IMPLEMENTED BY SUBCLASS
 
 
 
     //SCENETRANSITION MUST BE IMPLEMENTED BY SUBCLASS
-
-
-
-    addObject(key, x, y, pickable, dialogue, disappears){
-        let obj = new storyObject(this, key, x, y, pickable, dialogue, disappears);
-        this.storyObjects.set(key, obj);
-    }
 
 
 
@@ -137,6 +143,22 @@ class GameScene extends Phaser.Scene{
 
     queueMessage(text){
         this.queuedMessage = text;
+    }
+
+
+
+    showMessage(text){
+        this.descText = text;
+        this.newMsg = true;
+        this.msgTimeLength = (text.length * 50) + 1000;
+    }
+
+
+
+    clearMessage(){
+        this.descText = "";
+        this.queuedMessage = "";
+        this.msgTimeLength = 0;
     }
 
 

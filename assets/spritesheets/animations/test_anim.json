@@ -2,7 +2,7 @@
     "animations": [
         {
             "key": "morb",
-            "spriteSheet": "test",
+            "spriteSheet": "orb",
             "startFrame": 0,
             "endFrame": 1,
             "firstFrame": 0,
@@ -11,7 +11,7 @@
         },
         {
             "key": "morb2",
-            "spriteSheet": "test",
+            "spriteSheet": "orb",
             "startFrame": 0,
             "endFrame": 1,
             "firstFrame": 0,
