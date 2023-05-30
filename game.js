@@ -162,13 +162,13 @@ class SagittariusCafe extends GameScene{
 
 
 class GameMenu extends MenuScene{
-    
+    constructor(){ super('ingamemenu', "in-game menu") };
 }
 
 
 
 class MainMenu extends Phaser.Scene{
-    
+    constructor(){ super('mainmenu', "pre-game menu") };
 }
 
 

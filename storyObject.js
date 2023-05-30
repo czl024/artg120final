@@ -107,6 +107,7 @@
                 this.parentScene.addItem(this.key);
             }
             if(this.isDoor){
+                this.parentScene.clearMessage();
                 this.parentScene.goToScene(this.doorKey);
             }
             if(this.disappearsOnInteraction){
