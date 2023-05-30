@@ -10,7 +10,7 @@ class Test extends GameScene{
         orb.addDialogue(["talked to orb"], [], [], [], "introZ");
 
         if(!this.hasItem("chikn")){
-            let chikn = new storyObject(this, "chikn", this.w2, this.h2, true, false, true);
+            let chikn = new storyObject(this, "chikn", this.w2, this.h2, true, false, true, false);
             chikn.render.setDepth(0);
         }
 

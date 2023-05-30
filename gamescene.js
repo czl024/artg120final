@@ -144,6 +144,13 @@ class GameScene extends Phaser.Scene{
 
 
 
+    setBG(key){
+        let bg = this.add.image(this.w2, this.h2, key);
+        bg.setOrigin(.5);
+    }
+
+
+
     goToScene(key){
         //if sceneTransition isnt implemented then run the default transition
         if(this.sceneTransition !== undefined) this.sceneTransition();
