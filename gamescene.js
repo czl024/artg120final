@@ -311,7 +311,7 @@ class GameScene extends Phaser.Scene{
         if(!this.dialogueActive){
             this.descText = text;
             this.newMsg = true;
-            this.msgTimeLength = (text.length * 50) + 1000;
+            this.msgTimeLength = (this.descText.length * 50) + 1000;
         }
     }
 
@@ -343,12 +343,9 @@ class GameScene extends Phaser.Scene{
     }
 
     hasFlag(flag){
-        console.log(flag);
         if(this.searchArray(this.flags, flag) == -1){
-            console.log("false");
             return(false);
         }
-        console.log("true");
         return(true);
     }
 
