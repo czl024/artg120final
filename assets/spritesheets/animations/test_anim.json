@@ -1,0 +1,22 @@
+{
+    "animations": [
+        {
+            "key": "morb",
+            "spriteSheet": "test",
+            "startFrame": 0,
+            "endFrame": 1,
+            "firstFrame": 0,
+            "frameRate": 5,
+            "repeat": -1
+        },
+        {
+            "key": "morb2",
+            "spriteSheet": "test",
+            "startFrame": 0,
+            "endFrame": 1,
+            "firstFrame": 0,
+            "frameRate": 10,
+            "repeat": -1
+        }
+    ]
+}
