@@ -4,7 +4,7 @@ class Test extends GameScene{
     afterCreate(){
         let orb = new storyObject(this, 'orb', 3 * this.w2 / 2, this.h2, false, true, false);
         orb.render.play('morb2');
-        orb.render.setDepth(99);
+        orb.render.setDepth(10);
         orb.addDialogue([], ["talked to orb"], [], [], "intro");
         orb.addDialogue(["talked to orb"], [], ["chikn"], [], "introC");
         orb.addDialogue(["talked to orb"], [], [], [], "introZ");
@@ -12,10 +12,14 @@ class Test extends GameScene{
         if(!this.hasItem("chikn")){
             let chikn = new storyObject(this, "chikn", this.w2, this.h2, true, false, true, false);
             chikn.render.setDepth(0);
+            chikn.scale = .75;
+            chikn.render.scale = .75;
         }
 
-        let blount = new storyObject(this, 'blount', 100, 100, false, false, false, true);
+        let blount = new storyObject(this, 'blount', 400, this.h2, false, false, false, true);
         blount.setDoor('test2');
+        blount.scale = .5;
+        blount.render.scale = .5;
     }
 }
 
@@ -177,6 +181,7 @@ class Loader extends Phaser.Scene{
     constructor(){ super('loader', "load scene") };
 
     preload(){
+        this.load.image('menu', `assets/spritesheets/menutab.png`);
         this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
             frameWidth: 368,
             frameHeight: 360,

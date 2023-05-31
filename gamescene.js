@@ -34,6 +34,7 @@ class GameScene extends Phaser.Scene{
     msgTimeLength;  //the duration a message should be shown
     newMsg          = false; //a flag to tell if a message is new
     dialogueActive  = false; //a flag to see if dialogue is active
+    menuTab;        //this is the menu button
 
 
 
@@ -77,6 +78,7 @@ class GameScene extends Phaser.Scene{
         this.animations = this.cache.json.get('anims');
         this.createAnimations();
 
+        //initialize the description text
         this.descBox = this.add.text(this.w2, this.h2, "", {
             fontFamily: 'Helvetica',
             fontSize: 50,
@@ -85,9 +87,43 @@ class GameScene extends Phaser.Scene{
             wordWrap: {width: 400, useAdvancedWrap: true},
 		    align: 'center'
         });
+        this.descBox.setStroke('0x111111', 5);
         this.descBox.setOrigin(.5);
         this.descBox.setDepth(100);
+        this.descBox.setAlpha(.8);
 
+        //the menu button
+        this.menuTab = this.add.image(125, -68, 'menu');
+        this.menuTab.setDepth(89);
+        this.menuTab.setOrigin(.5, 0);
+        this.menuTab.scale = 1.25;
+        this.menuTab.setInteractive();
+        this.menuTab.on('pointerover', () =>{
+            this.add.tween({
+                targets: this.menuTab,
+                y: 0,
+                ease: 'quad.out',
+                duration: 150
+            })
+        });
+        this.menuTab.on('pointerout', () =>{
+            this.add.tween({
+                targets: this.menuTab,
+                y: -68,
+                ease: 'quad.out',
+                duration: 150
+            })
+        });
+        this.menuTab.on('pointerdown', () =>{
+            this.scene.start('ingamemenu', {
+                callScene: this,
+                items: this.items,
+                flags: this.flags,
+                relationships: this.relationships
+            });
+        });
+
+        //subclasses implement this
         this.afterCreate();
     }
 
@@ -184,25 +220,38 @@ class GameScene extends Phaser.Scene{
         let textDelay = 15;     //time between each character in ms
         let links = [];         //stores dialogue option text
         let linkButtons = []    //stores dialogue option buttons
+        let sceneFilter;        //the screen darkener behind the dialogue
+        let overlay;            //an invisible overlay
 
         //text position and whatnot
         let textX = 0;
         let textY = 2 * this.height / 3;
         let textWidth = this.width - 100;
 
+        //the thing that makes the screen darker
+        sceneFilter = this.add.rectangle(this.w2, this.h2, this.width, this.height, '0xf0f0f0')
+        sceneFilter.setAlpha(.25);
+        sceneFilter.setDepth(90);
+        overlay = this.add.rectangle(this.w2, this.h2, this.width, this.height, '0xf0f0f0')
+        overlay.setAlpha(.01);
+        overlay.setDepth(199)
+        overlay.setInteractive();
         //the sprite
         let character = this.add.sprite(this.w2, this.h2, node.sprite);
         character.setOrigin(.5);
         //have the sprite play an animation 
         character.play(node.animation);
+        character.setDepth(90);
         //the dialogue box
         let dialogueBox = this.add.rectangle(0, textY, this.width, this.height / 3, '0x111111');
         dialogueBox.setOrigin(0);
         dialogueBox.setAlpha(.75);
         dialogueBox.setInteractive();
+        dialogueBox.setDepth(100);
         //the nameplate
         let namePlate = this.add.rectangle(this.width / 2, textY - 30, node.nameplate.length * 20, 60, '0xDCDCDC');
         namePlate.setOrigin(.5);
+        namePlate.setDepth(100);
         //the text stuff
         let dialogueText = this.add.text(50, textY + 50, "", {
             fontFamily: 'Helvetica',
@@ -210,16 +259,19 @@ class GameScene extends Phaser.Scene{
             color: "#f0f0f0",
             wordWrap: {width: textWidth, useAdvancedWrap: true}
         });
+        dialogueText.setDepth(101);
         let nameText = this.add.text(this.width / 2, textY - 30, node.nameplate, {
             fontFamily: 'Helvetica',
             fontSize: 30,
             color: "#101010",
         });
         nameText.setOrigin(.5);
+        nameText.setDepth(101);
 
 
 
         //actually do stuff
+        this.menuTab.disableInteractive();
         //load the text
         queuedDia = node.text[txtIndex];
         //display text with typewriter effect
@@ -248,8 +300,8 @@ class GameScene extends Phaser.Scene{
             }
         });
         //do this when the dialoguebox is clicked
-        dialogueBox.on('pointerdown', () => {
-            if(finishedTalking && !optionsVisible){                    //dont let player skip ahead
+        overlay.on('pointerdown', () => {
+            if(finishedTalking && !optionsVisible){     //dont let player skip ahead
                 if(txtIndex + 1 < node.text.length){    //theres more text to show
                     finishedTalking = false;
                     txtIndex++;
@@ -276,6 +328,8 @@ class GameScene extends Phaser.Scene{
                             //this is the button
                             linkButtons.push(this.add.rectangle(this.w2, (a + 1) * (textY / (node.links.length + 1)), node.linktext[node.links[a]].length * 30, 60, "0x111111"));
                             linkButtons[a].setOrigin(.5);
+                            linkButtons[a].setAlpha(.75);
+                            linkButtons[a].setDepth(200);
                             linkButtons[a].setInteractive();
                             linkButtons[a].on('pointerdown', () => {
                                 character.destroy();
@@ -283,8 +337,11 @@ class GameScene extends Phaser.Scene{
                                 namePlate.destroy();
                                 dialogueText.destroy();
                                 nameText.destroy();
+                                sceneFilter.destroy();
                                 links.forEach((element) => {element.destroy()});
                                 linkButtons.forEach((element) => {element.destroy()});
+                                overlay.destroy();
+                                this.menuTab.setInteractive();
                                 this.startDialogue(node.links[a]);
                             })
                             
@@ -296,6 +353,7 @@ class GameScene extends Phaser.Scene{
                                 wordWrap: {width: textWidth, useAdvancedWrap: true}
                             }));
                             links[a].setOrigin(.5);
+                            links[a].setDepth(201);
                         }
                     }else{  //the dialogue is over, cleanup everything
                         character.destroy();
@@ -304,6 +362,9 @@ class GameScene extends Phaser.Scene{
                         dialogueText.destroy();
                         nameText.destroy();
                         this.dialogueActive = false;
+                        sceneFilter.destroy();
+                        overlay.destroy();
+                        this.menuTab.setInteractive();
                     }
                 }
             }
@@ -393,7 +454,7 @@ class MenuScene extends Phaser.Scene{
 
 
     init(data){
-        this.callScene = data.callScene;
+        this.callScene = data.callScene;    //this is the scene that called the menu
         this.items = data.items;
         this.flags = data.flags;
         this.relationships = data.relationships;
@@ -402,6 +463,13 @@ class MenuScene extends Phaser.Scene{
 
 
     create(){
+        //itemList
 
+        //the back button
+        this.scene.start(this.callScene, {
+            items: this.items,
+            flags: this.flags,
+            relationships: this.relationships
+        });
     }
 }
