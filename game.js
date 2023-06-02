@@ -176,6 +176,7 @@ class SagittariusCafe extends GameScene{
 
 
 
+//this is all that needs to be done for this scene, no touchy
 class GameMenu extends MenuScene{
     constructor(){ super('ingamemenu', "in-game menu") };
 }
@@ -184,6 +185,10 @@ class GameMenu extends MenuScene{
 
 class MainMenu extends Phaser.Scene{
     constructor(){ super('mainmenu', "pre-game menu") };
+
+    create(){
+        //start game button
+    }
 }
 
 
@@ -192,6 +197,19 @@ class Loader extends Phaser.Scene{
     constructor(){ super('loader', "load scene") };
 
     preload(){
+        this.load.on('progress', (value) => {
+            this.progText = this.add.text(this.game.config.width / 2, this.game.config.height / 2, `Loading...${value}`, {
+                fontFamily: 'Helvetica',
+                fontSize: 100,
+                color: '#F0F0F0',
+                align: 'center'
+            }).setOrigin(.5);
+            this.progText.destroy();
+        });
+        this.load.on('complete', () => {
+            this.scene.start('test');
+        })
+
         this.load.image('menu', `assets/spritesheets/menutab.png`);
         this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
             frameWidth: 368,
@@ -208,10 +226,6 @@ class Loader extends Phaser.Scene{
             frameWidth: 1024,
             frameHeight: 1280,
         });
-    }
-
-    create(){
-        this.scene.start('test');
     }
 }
 
