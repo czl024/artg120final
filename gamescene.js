@@ -591,9 +591,7 @@ class MenuScene extends Phaser.Scene{
         this.downButton.on('pointerover', () => { this.downButton.fillColor -= 0x111111 });
         this.downButton.on('pointerout', () => { this.downButton.fillColor += 0x111111 });
         this.downButton.on('pointerdown', () => {
-            console.log(this.index, this.items.length)
             if(this.index + 12 < this.items.length) this.index++;   //prevent the player from infinitely scrolling down
-            console.log(this.index)
             if(this.items.length > 12) this.maxIndex = 12;  //set the max index of the iterator over the player's inventory
             else this.maxIndex = this.items.length;
             for(let x = 0; x < this.maxIndex; x++){             //change the text of the buttons
