@@ -562,9 +562,8 @@ class MenuScene extends Phaser.Scene{
         this.upButton.on('pointerout', () => { this.upButton.fillColor += 0x111111 });
         this.upButton.on('pointerdown', () => {
             if(this.index > 0) this.index--;            //prevent the player from infinitely scrolling up
-            if(this.items.length > 12) this.maxIndex = 12;
+            if(this.items.length > 12) this.maxIndex = 12;  //set the max index of the iterator over the player's inventory
             else this.maxIndex = this.items.length;
-            console.log(this.itemList.length);
             for(let x = 0; x < this.maxIndex; x++){ //change the text of the buttons
                 this.itemList[x].setButtonText(this.items[x + this.index]);
             }
@@ -573,7 +572,6 @@ class MenuScene extends Phaser.Scene{
                 alpha: .25,
                 duration: 50,
             })
-            console.log(this.index)
         });
         this.upButton.on('pointerup', () => {
             this.add.tween({
@@ -593,8 +591,12 @@ class MenuScene extends Phaser.Scene{
         this.downButton.on('pointerover', () => { this.downButton.fillColor -= 0x111111 });
         this.downButton.on('pointerout', () => { this.downButton.fillColor += 0x111111 });
         this.downButton.on('pointerdown', () => {
-            if(this.items.length + this.index > 12) this.index++;   //prevent the player from infinitely scrolling down
-            for(let x = 0; x < this.items.length; x++){             //change the text of the buttons
+            console.log(this.index, this.items.length)
+            if(this.index + 12 < this.items.length) this.index++;   //prevent the player from infinitely scrolling down
+            console.log(this.index)
+            if(this.items.length > 12) this.maxIndex = 12;  //set the max index of the iterator over the player's inventory
+            else this.maxIndex = this.items.length;
+            for(let x = 0; x < this.maxIndex; x++){             //change the text of the buttons
                 this.itemList[x].setButtonText(this.items[x + this.index]);
             }
             this.add.tween({
@@ -602,7 +604,6 @@ class MenuScene extends Phaser.Scene{
                 alpha: .25,
                 duration: 50,
             })
-            console.log(this.index)
         });
         this.downButton.on('pointerup', () => {
             this.add.tween({
@@ -649,7 +650,6 @@ class MenuScene extends Phaser.Scene{
 
     setButton(index){
         let activeItemText = this.itemList[index].text;
-        console.log(`old : ${this.activeButton}, new : ${index}`);
 
         //deactivate the previous button
         if(this.activeButton != undefined){

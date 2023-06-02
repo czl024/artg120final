@@ -27,6 +27,8 @@ class Test extends GameScene{
             chikn.render.scale = .75;   //changes the image size
         //}
 
+        for(let a = 0; a < 12; a++) this.addItem('chikn')
+
         let blount = new storyObject(this, 'blount', 400, this.h2, false, false, false, true);
         blount.setDoor('test2');    //sets the scene this door leads to
         blount.scale = .5;
