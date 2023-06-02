@@ -450,6 +450,7 @@ class MenuScene extends Phaser.Scene{
     downButton;
     fsButton
     index;
+    maxIndex;
 
 
 
@@ -551,7 +552,7 @@ class MenuScene extends Phaser.Scene{
         for(let a = 2; a < 14; a++){
             this.itemList.push(new InventoryButton(this, 4 * this.width / 5 - 75, (this.h2 / 4 + 30) + (a * 55), a));
         }
-        for(let b = 0; b < this.items.length; b++){
+        for(let b = 0; b < 12; b++){
             this.itemList[b].setButtonText(this.items[b]);
         }
         //the up button
@@ -561,7 +562,10 @@ class MenuScene extends Phaser.Scene{
         this.upButton.on('pointerout', () => { this.upButton.fillColor += 0x111111 });
         this.upButton.on('pointerdown', () => {
             if(this.index > 0) this.index--;            //prevent the player from infinitely scrolling up
-            for(let x = 0; x < this.items.length; x++){ //change the text of the buttons
+            if(this.items.length > 12) this.maxIndex = 12;
+            else this.maxIndex = this.items.length;
+            console.log(this.itemList.length);
+            for(let x = 0; x < this.maxIndex; x++){ //change the text of the buttons
                 this.itemList[x].setButtonText(this.items[x + this.index]);
             }
             this.add.tween({

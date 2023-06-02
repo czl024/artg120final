@@ -19,13 +19,13 @@ class Test extends GameScene{
         orb.addDialogue(["talked to orb"], [], ["chikn"], [], "introC");
         orb.addDialogue(["talked to orb"], [], [], [], "introZ");
 
-        if(!this.hasItem("chikn")){
+        //if(!this.hasItem("chikn")){
             let chikn = new storyObject(this, "chikn", this.w2, this.h2, true, false, true, false);
             chikn.setDepth(0);
             chikn.render.setDepth(0);
             chikn.scale = .75;          //changes the hitbox size
             chikn.render.scale = .75;   //changes the image size
-        }
+        //}
 
         let blount = new storyObject(this, 'blount', 400, this.h2, false, false, false, true);
         blount.setDoor('test2');    //sets the scene this door leads to
