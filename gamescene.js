@@ -49,9 +49,9 @@ class GameScene extends Phaser.Scene{
 
     preload(){
         //load the jsons associated with a scene
-        this.load.json('dialogue', `assets/dialogue/${this.sceneName}_dia.json`);
-        this.load.json('mouseover', `assets/mouseover/${this.sceneName}_mo.json`);
-        this.load.json('anims', `assets/spritesheets/animations/${this.sceneName}_anim.json`);
+        this.load.json('dialogue', `assets/jsons/${this.sceneName}/${this.sceneName}_dia.json`);
+        this.load.json('mouseover', `assets/jsons/${this.sceneName}/${this.sceneName}_mo.json`);
+        this.load.json('anims', `assets/jsons/${this.sceneName}/${this.sceneName}_anim.json`);
     }
 
 
@@ -166,6 +166,7 @@ class GameScene extends Phaser.Scene{
             }
         }
 
+        //change position of the desc text based on cursor from center
         let dx = this.input.activePointer.worldX - this.w2;
         dx /= 1.35;
         let dy = this.input.activePointer.worldY - this.h2;
@@ -443,33 +444,256 @@ class GameScene extends Phaser.Scene{
 class MenuScene extends Phaser.Scene{
     itemList;   //this will be the object that lists the items
     descBox;    //this will be the object that describes whatever is hovered over
+    activeButton;   //determines which item is selected
+    descBoxText;
+    upButton;
+    downButton;
+    fsButton
+    index;
 
 
 
     constructor(key, name){
         super(key);
         this.name = name;
+        this.itemList = [];
+        this.index = 0;
     }
 
 
 
     init(data){
         this.callScene = data.callScene;    //this is the scene that called the menu
-        this.items = data.items;
-        this.flags = data.flags;
-        this.relationships = data.relationships;
+        this.items = data.items || [];
+        this.flags = data.flags || [];
+        this.relationships = data.relationships || [];
+        this.width = this.game.config.width;    //width of the game
+        this.height = this.game.config.height;  //height of the game
+        this.w2 = this.width / 2;               //width of the game / 2
+        this.h2 = this.height / 2;              //height of the game / 2
+    }
+
+
+
+    preload(){
+        this.load.json('inventory', 'assets/jsons/inventory.json');
     }
 
 
 
     create(){
-        //itemList
+        this.activeButton = undefined;
+        this.inventory = this.cache.json.get('inventory');
+        //background
+        let bg = this.add.rectangle(this.w2, this.h2, this.width, this.height, '0x252525');
+
+        //itemDescription
+        let descBoxBorder = this.add.rectangle(1 * this.width / 3 - 100, 2 * this.height / 3 - 5, 850, 550, '0x353535');
+        descBoxBorder.setOrigin(.5);
+        let descBox = this.add.rectangle(1 * this.width / 3 - 100, 2 * this.height / 3 - 5, 800, 500, '0x505050');
+        descBox.setOrigin(.5);
+        this.descBoxText = this.add.text(1 * this.width / 3 - 100, 2 * this.height / 3 - 5, "", {
+            fontFamily: 'Helvetica',
+            fontSize: 40,
+            color: '#F0F0F0',
+            wordWrap: {width: 750, useAdvancedWrap: true},
+            align: 'center'
+        })
+        this.descBoxText.setOrigin(.5);
 
         //the back button
-        this.scene.start(this.callScene, {
-            items: this.items,
-            flags: this.flags,
-            relationships: this.relationships
+        let backButton = this.add.rectangle(280, 115, 325, 50, '0xB5B5B5');
+        backButton.setOrigin(.5);
+        backButton.setInteractive();
+        backButton.on('pointerover', () => {
+            this.add.tween({
+                targets: backButton,
+                alpha: .8,
+                duration: 100
+            })
         });
+        backButton.on('pointerout', () => {
+            this.add.tween({
+                targets: backButton,
+                alpha: 1,
+                duration: 100
+            })
+        });
+        backButton.on('pointerdown', () => {
+            this.scene.start(this.callScene, {
+                items: this.items,
+                flags: this.flags,
+                relationships: this.relationships
+            });
+        })
+        let backButtonText = this.add.text(280, 115, "Return to Game", {
+            fontFamily: 'Helvetica',
+            fontSize: 40,
+            color: '#0F0F0F',
+		    align: 'center'
+        });
+        backButtonText.setOrigin(.5);
+
+        //itemList
+        let itemBoxBorder = this.add.rectangle(4 * this.width / 5 - 75, this.h2, 700, 900, '0x353535');
+        itemBoxBorder.setOrigin(.5);
+        let itemBox = this.add.rectangle(4 * this.width / 5 - 75, this.h2, 650, 850, '0x505050');
+        itemBox.setOrigin(.5);
+        let itemTitle = this.add.text(4 * this.width / 5 - 75, this.h2 / 4 + 15, "Inventory", {
+            fontFamily: 'Helvetica',
+            fontSize: 50,
+            color: "#F0F0F0",
+        });
+        itemTitle.setOrigin(.5);
+        while(this.itemList.length > 0){
+            this.itemList.pop();
+        }
+        for(let a = 2; a < 14; a++){
+            this.itemList.push(new InventoryButton(this, 4 * this.width / 5 - 75, (this.h2 / 4 + 30) + (a * 55), a));
+        }
+        for(let b = 0; b < this.items.length; b++){
+            this.itemList[b].setButtonText(this.items[b]);
+        }
+        //the up button
+        this.upButton = this.add.rectangle(4 * this.width / 5 - 75, this.h2 / 4 + 85, 650, 55, '0x727272');
+        this.upButton.setInteractive();
+        this.upButton.on('pointerover', () => { this.upButton.fillColor -= 0x111111 });
+        this.upButton.on('pointerout', () => { this.upButton.fillColor += 0x111111 });
+        this.upButton.on('pointerdown', () => {
+            if(this.index > 0) this.index--;            //prevent the player from infinitely scrolling up
+            for(let x = 0; x < this.items.length; x++){ //change the text of the buttons
+                this.itemList[x].setButtonText(this.items[x + this.index]);
+            }
+            this.add.tween({
+                targets: this.upButton,
+                alpha: .25,
+                duration: 50,
+            })
+            console.log(this.index)
+        });
+        this.upButton.on('pointerup', () => {
+            this.add.tween({
+                targets: this.upButton,
+                alpha: 1,
+                duration: 50,
+            })
+        })
+        this.add.text(4 * this.width / 5 - 75, this.h2 / 4 + 87.5, '^^^', {
+            fontFamily: 'Helvetica',
+            fontSize: 45,
+            color: "#111111",
+        }).setOrigin(.5);
+        //the down button
+        this.downButton = this.add.rectangle(4 * this.width / 5 - 75, this.h2 / 4 + 800, 650, 55, '0x727272');
+        this.downButton.setInteractive();
+        this.downButton.on('pointerover', () => { this.downButton.fillColor -= 0x111111 });
+        this.downButton.on('pointerout', () => { this.downButton.fillColor += 0x111111 });
+        this.downButton.on('pointerdown', () => {
+            if(this.items.length + this.index > 12) this.index++;   //prevent the player from infinitely scrolling down
+            for(let x = 0; x < this.items.length; x++){             //change the text of the buttons
+                this.itemList[x].setButtonText(this.items[x + this.index]);
+            }
+            this.add.tween({
+                targets: this.downButton,
+                alpha: .25,
+                duration: 50,
+            })
+            console.log(this.index)
+        });
+        this.downButton.on('pointerup', () => {
+            this.add.tween({
+                targets: this.downButton,
+                alpha: 1,
+                duration: 50,
+            })
+        })
+        this.add.text(4 * this.width / 5 - 75, this.h2 / 4 + 800, 'vvv', {
+            fontFamily: 'Helvetica',
+            fontSize: 40,
+            color: "#111111",
+        }).setOrigin(.5);
+
+        //fullscreen button
+        this.fsButton = this.add.rectangle(780, 115, 350, 50, '0xB5B5B5');
+        this.fsButton.setInteractive();
+        this.fsButton.on('pointerover', () => {
+            this.add.tween({
+                targets: this.fsButton,
+                alpha: .8,
+                duration: 100
+            })
+        });
+        this.fsButton.on('pointerout', () => {
+            this.add.tween({
+                targets: this.fsButton,
+                alpha: 1,
+                duration: 100
+            })
+        });
+        this.fsButton.on('pointerdown', () => {
+            this.scale.toggleFullscreen();
+        });
+        this.add.text(780, 115, "Toggle Fullscreen", {
+            fontFamily: 'Helvetica',
+            fontSize: 40,
+            color: '#0F0F0F',
+		    align: 'center'
+        }).setOrigin(.5);
+    }
+
+
+
+    setButton(index){
+        let activeItemText = this.itemList[index].text;
+        console.log(`old : ${this.activeButton}, new : ${index}`);
+
+        //deactivate the previous button
+        if(this.activeButton != undefined){
+            this.itemList[this.activeButton].button.fillColor += 0x333333;
+            this.itemList[this.activeButton].buttonText.clearTint();
+        }
+        //activate the button
+        this.activeButton = index;
+        this.itemList[this.activeButton].button.fillColor -= 0x333333;
+        this.itemList[this.activeButton].buttonText.setTintFill(0xF0F0F0);
+        if(this.itemList[this.activeButton].buttonText.text === "") this.descBoxText.setText("");
+        else this.descBoxText.setText(this.inventory[activeItemText]);
+    }
+}
+
+
+
+class InventoryButton{
+    button;
+    buttonText;
+    text;
+    parentScene;
+    index;
+
+
+
+    constructor(scene, x, y, i){
+        this.text = "";
+        this.index = i - 2;
+        this.parentScene = scene;
+        this.button = this.parentScene.add.rectangle(x, y, 650, 55, '0x727272');
+        this.button.setOrigin(.5);
+        this.button.setInteractive();
+        this.button.on('pointerover', () => { this.button.fillColor -= 0x111111 });
+        this.button.on('pointerout', () => { this.button.fillColor += 0x111111 });
+        this.button.on('pointerdown', () => { this.parentScene.setButton(this.index) })
+        this.buttonText = this.parentScene.add.text(x, y, "", {
+            fontFamily: 'Helvetica',
+            fontSize: 40,
+            color: "#111111",
+        });
+        this.buttonText.setOrigin(.5);
+    }
+
+
+
+    setButtonText(inText){
+        this.text = inText;
+        this.buttonText.setText(this.text);
     }
 }

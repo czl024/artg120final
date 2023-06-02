@@ -38,7 +38,10 @@
         
         this.on('pointerover', () => { this.mouseover(); });
         this.on('pointerdown', () => { this.onClick(); });
-        this.on('pointerout', () => { this.parentScene.clearMessage(); });
+        this.on('pointerout', () => {
+            this.render.clearTint();
+            this.parentScene.clearMessage();
+        });
 
         this.dialogueRequirements = {flag: [], noflag: [], item: [], noitem: []}
         this.dialogueNodeStarts = [];
@@ -48,6 +51,7 @@
 
     mouseover(){
         //return the initial message and the long message to the parent scene from the parent scene's jsons
+        this.render.setTint(0xDDDDDD);
         this.parentScene.showMessage(this.parentScene.mouseover[this.key].text);
         this.parentScene.queueMessage(this.parentScene.mouseover[this.key].longtext);
     }
@@ -141,12 +145,4 @@
 
 
     setDoor(key){ this.doorKey = key }
-}
-
-
-
-class testobj extends Phaser.GameObjects.Sprite{
-    constructor(scene, key, x, y){
-        super(scene, x, y, key);
-    }
 }
