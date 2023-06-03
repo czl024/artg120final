@@ -54,7 +54,10 @@ class Intro1 extends GameScene{
     constructor(){ super('intro1', "home") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'intro1');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -68,7 +71,10 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'intro2');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -82,7 +88,10 @@ class Intro3 extends GameScene{
     constructor(){ super('intro3', "outside apartment") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'intro3');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -93,10 +102,13 @@ class Intro3 extends GameScene{
 
 
 class Interrogation1 extends GameScene{
-    constructor(){ super('intero1', "medbay") };
+    constructor(){ super('interro1', "medbay") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'interro1');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -107,10 +119,13 @@ class Interrogation1 extends GameScene{
 
 
 class Interrogation2 extends GameScene{
-    constructor(){ super('intero2', "brig") };
+    constructor(){ super('interro2', "brig") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'interro2');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -121,10 +136,13 @@ class Interrogation2 extends GameScene{
 
 
 class Interrogation3 extends GameScene{
-    constructor(){ super('intero3', "bridge") };
+    constructor(){ super('interro3', "bridge") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'interro3');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -177,17 +195,46 @@ class SagittariusCafe extends GameScene{
 
 
 //this is all that needs to be done for this scene, no touchy
-class GameMenu extends MenuScene{
-    constructor(){ super('ingamemenu', "in-game menu") };
-}
+class GameMenu extends MenuScene{ constructor(){ super('ingamemenu', "in-game menu") }; }
 
 
 
 class MainMenu extends Phaser.Scene{
     constructor(){ super('mainmenu', "pre-game menu") };
 
+    init(){
+        this.width = this.game.config.width;    //width of the game
+        this.w2 = this.width / 2;
+        this.height = this.game.config.height;  //height of the game
+        this.h2 = this.height / 2;
+    }
+
     create(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'mmbg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+
         //start game button
+        this.button = this.add.rectangle(this.w2, 3 * (this.height / 4), 300, 75, '0xa73db3');
+        this.button.setInteractive();
+        this.button.setOrigin(.5);
+        this.button.on('pointerover', () => {
+            this.button.fillColor = 0xb84ec4;
+        })
+        this.button.on('pointerout', () => {
+            this.button.fillColor = 0xa73db3;
+        })
+        this.button.on('pointerdown', () => {
+            this.scene.start('test');
+        })
+        this.buttonText = this.add.text(this.w2, 3 * (this.height / 4), 'Start Game', {
+            fontFamily: 'bahn',
+            fontSize: 50,
+            color: '#F0F0F0',
+            align: 'center'
+        });
+        this.buttonText.setOrigin(.5);
     }
 }
 
@@ -197,9 +244,10 @@ class Loader extends Phaser.Scene{
     constructor(){ super('loader', "load scene") };
 
     preload(){
+        //lets people know the game is being loaded
         this.load.on('progress', (value) => {
             this.progText = this.add.text(this.game.config.width / 2, this.game.config.height / 2, `Loading...${value}`, {
-                fontFamily: 'Helvetica',
+                fontFamily: 'bahn',
                 fontSize: 100,
                 color: '#F0F0F0',
                 align: 'center'
@@ -207,10 +255,20 @@ class Loader extends Phaser.Scene{
             this.progText.destroy();
         });
         this.load.on('complete', () => {
-            this.scene.start('test');
+            this.scene.start('mainmenu');
         })
 
+        //basic images
         this.load.image('menu', `assets/spritesheets/menutab.png`);
+        this.load.image('mmbg', `assets/backgrounds/TitleScreen.png`);
+        this.load.image('intro1bg', `assets/backgrounds/intro1.png`);
+        this.load.image('intro2bg', `assets/backgrounds/intro2.png`);
+        this.load.image('intro3bg', `assets/backgrounds/intro3.png`);
+        this.load.image('interro1bg', `assets/backgrounds/interrogation1.png`);
+        this.load.image('interro2bg', `assets/backgrounds/interrogation2.png`);
+        this.load.image('interro3bg', `assets/backgrounds/interrogation3.png`);
+
+        //spritesheets for animations
         this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
             frameWidth: 368,
             frameHeight: 360,

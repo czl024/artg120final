@@ -80,7 +80,7 @@ class GameScene extends Phaser.Scene{
 
         //initialize the description text
         this.descBox = this.add.text(this.w2, this.h2, "", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 50,
             alpha: .6,
             color: '#f0f0f0',
@@ -255,14 +255,14 @@ class GameScene extends Phaser.Scene{
         namePlate.setDepth(100);
         //the text stuff
         let dialogueText = this.add.text(50, textY + 50, "", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 45,
             color: "#f0f0f0",
             wordWrap: {width: textWidth, useAdvancedWrap: true}
         });
         dialogueText.setDepth(101);
         let nameText = this.add.text(this.width / 2, textY - 30, node.nameplate, {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 30,
             color: "#101010",
         });
@@ -348,7 +348,7 @@ class GameScene extends Phaser.Scene{
                             
                             //this is the text
                             links.push(this.add.text(this.w2, (a + 1) * (textY / (node.links.length + 1)), node.linktext[node.links[a]], {
-                                fontFamily: 'Helvetica',
+                                fontFamily: 'bahn',
                                 fontSize: 50,
                                 color: "#f0f0f0",
                                 wordWrap: {width: textWidth, useAdvancedWrap: true}
@@ -494,7 +494,7 @@ class MenuScene extends Phaser.Scene{
         let descBox = this.add.rectangle(1 * this.width / 3 - 100, 2 * this.height / 3 - 5, 800, 500, '0x505050');
         descBox.setOrigin(.5);
         this.descBoxText = this.add.text(1 * this.width / 3 - 100, 2 * this.height / 3 - 5, "", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 40,
             color: '#F0F0F0',
             wordWrap: {width: 750, useAdvancedWrap: true},
@@ -528,7 +528,7 @@ class MenuScene extends Phaser.Scene{
             });
         })
         let backButtonText = this.add.text(280, 115, "Return to Game", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 40,
             color: '#0F0F0F',
 		    align: 'center'
@@ -541,7 +541,7 @@ class MenuScene extends Phaser.Scene{
         let itemBox = this.add.rectangle(4 * this.width / 5 - 75, this.h2, 650, 850, '0x505050');
         itemBox.setOrigin(.5);
         let itemTitle = this.add.text(4 * this.width / 5 - 75, this.h2 / 4 + 15, "Inventory", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 50,
             color: "#F0F0F0",
         });
@@ -637,7 +637,7 @@ class MenuScene extends Phaser.Scene{
             this.scale.toggleFullscreen();
         });
         this.add.text(780, 115, "Toggle Fullscreen", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 40,
             color: '#0F0F0F',
 		    align: 'center'
@@ -685,7 +685,7 @@ class InventoryButton{
         this.button.on('pointerout', () => { this.button.fillColor += 0x111111 });
         this.button.on('pointerdown', () => { this.parentScene.setButton(this.index) })
         this.buttonText = this.parentScene.add.text(x, y, "", {
-            fontFamily: 'Helvetica',
+            fontFamily: 'bahn',
             fontSize: 40,
             color: "#111111",
         });

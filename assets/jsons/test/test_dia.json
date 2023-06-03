@@ -57,6 +57,17 @@
             "text":         ["this text means you've already talked to mr morbius"],
             "links":        [],
             "linktext":     {}
+        },
+        "":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         [""],
+            "links":        [],
+            "linktext":     {}
         }
     }
 }
