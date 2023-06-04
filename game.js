@@ -342,6 +342,7 @@ const game = new Phaser.Game({
         autoCenter: Phaser.Scale.CENTER_BOTH,
         width: 1920,
         height: 1080,
+        zoom: 4,
         pixelArt: true
     },
     //every scene needs to be in here, so dont forget
