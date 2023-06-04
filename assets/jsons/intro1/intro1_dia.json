@@ -1,15 +1,113 @@
 {
     "dialogue":{
-        "":{
+        "1":{
+            "flags":        ["intro1 done"],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         ["Your computer screen emits a dull glow which dimly illuminates your otherwise dark room, bottles of empty water hastily shoved to a corner.\n[Click to continue dialogue boxes]",
+                            "You lean back on your chair with a sigh, turning your volume back up as the ad finally comes to a close. The stream you're watching buffers for three agonizing seconds before the streams resumes about thirty seconds in the future.",
+                            "Beeps and boops enter your headphones."],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    "2"
+        },
+        "2":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "Streamer",
+            "animation":    "",
+            "text":         ["-think we should probably colonize this planet. It looks sooo colonizable."],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    "3"
+        },
+        "3":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
             "nameplate":    "",
             "animation":    "",
-            "text":         [""],
+            "text":         ["A voice of a person filters over it, shockingly competent audio mixing, for once. Some menu of a space game, Cosmic, stares back.",
+                            "You personally don’t have much interest in playing it yourself, but find the streamer’s personality entertaining enough to stick through it, or at least have on the side while you occupy yourself with slightly less unproductive matters.",
+                            "The webcam shows them running a hand through their hair."],
             "links":        [],
-            "linktext":     {}
+            "linktext":     {},
+            "quietLink":    "4"
+        },
+        "4":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "Streamer",
+            "animation":    "",
+            "text":         ["Yeah chat, I see you. It’s in a bad location. But this one has invested in me.",
+                            "Or annoyed me, I’m not quite sure which yet.",
+                            "Regardless! I'll get a lot from being a part of the galactic alliance."],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    "5"
+        },
+        "5":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         ["Considering their track record, you doubt it will be smooth sailing. Although you don’t understand much of the mechanics, you do know that they messed up three different alliances, two of which took a good chunk of time and resources to fix. Maybe this one would be different?"],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    "6"
+        },
+        "6":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "Streamer",
+            "animation":    "",
+            "text":         ["Right, okay, let’s start by-"],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    "7"
+        },
+        "7":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         ["A vibration shakes your body, startling you back into reality.",
+                            "One look around and you realize it’s your phone alarm, having been set for a reminder.",
+                            "You blink.",
+                            "What reminder did you set again? Well, that's the point of reminders.",
+                            "You click the lock screen off, staring at the full notification. A breath gets sucked in through closed teeth.",
+                            "Right, you had to go to get some groceries. It was something that you had been putting off for a few days. Briefly, a thought flashed to beckon you to stay, but you shirk those thoughts as duty calls, or something like that. ",
+                            "Muting the stream, you get up to your feet and stretch, popping some joints in the process. It doesn’t take long for you to move through your bedroom and get dressed, at least as much as is socially acceptable.",
+                            "Right then…"],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    ""
+        },
+        "wallet":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         ["Alright, time to head out."],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    ""
         }
     }
 }

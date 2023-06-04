@@ -58,14 +58,14 @@
             "links":        [],
             "linktext":     {}
         },
-        "":{
+        "test":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
             "nameplate":    "",
             "animation":    "",
-            "text":         [""],
+            "text":         ["sex", "meow"],
             "links":        [],
             "linktext":     {}
         }

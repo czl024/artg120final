@@ -35,6 +35,8 @@ class GameScene extends Phaser.Scene{
     newMsg          = false; //a flag to tell if a message is new
     dialogueActive  = false; //a flag to see if dialogue is active
     menuTab;        //this is the menu button
+    debug;
+    debugText;      //the text showing mouse position
 
 
 
@@ -43,6 +45,7 @@ class GameScene extends Phaser.Scene{
         super(key);
         this.sceneName = key;
         this.name = name;
+        this.debug = false;
     }
 
 
@@ -122,6 +125,14 @@ class GameScene extends Phaser.Scene{
                 relationships: this.relationships
             });
         });
+        this.debugText = this.add.text(100, 100, "", {
+            fontFamily: 'bahn',
+            fontSize: 50,
+            alpha: .6,
+            color: '#f0f0f0',
+		    align: 'center'
+        })
+        this.debugText.setDepth(1000);
 
         //subclasses implement this
         this.afterCreate();
@@ -150,7 +161,7 @@ class GameScene extends Phaser.Scene{
 
 
 
-    update(time, delta){
+    update(time){
         //set description text
         this.descBox.setText(this.descText);
 
@@ -173,6 +184,8 @@ class GameScene extends Phaser.Scene{
         dy /= 1.4;
         this.descBox.x = dx + this.w2;
         this.descBox.y = dy + this.h2;
+
+        if(this.debug){ this.debugText.setText(`x : ${Math.round(this.input.activePointer.worldX)}\ny : ${Math.round(this.input.activePointer.worldY)}`) }
     }
 
 
@@ -192,6 +205,9 @@ class GameScene extends Phaser.Scene{
         //if sceneTransition isnt implemented then run the default transition
         if(this.sceneTransition !== undefined) this.sceneTransition();
         else this.defaultTransition();
+        this.cache.json.remove('dialogue');
+        this.cache.json.remove('anims');
+        this.cache.json.remove('mouseover');
         this.scene.start(key, {
             items: this.items,
             flags: this.flags,
@@ -207,7 +223,7 @@ class GameScene extends Phaser.Scene{
 
 
 
-    startDialogue(startNode){
+    startDialogue(startNode, afterFunc){
         //initialize stuff
         let node = this.dialogue[startNode];
         this.dialogueActive = true;
@@ -218,7 +234,7 @@ class GameScene extends Phaser.Scene{
         let queuedDia = "";     //this is the text to show
         let writerIndex = 0;    //where the typewriter is looking
         let displayedDia = "";  //this is whats currently shown
-        let textDelay = 15;     //time between each character in ms
+        let textDelay = 5;     //time between each character in ms
         let links = [];         //stores dialogue option text
         let linkButtons = []    //stores dialogue option buttons
         let sceneFilter;        //the screen darkener behind the dialogue
@@ -238,11 +254,14 @@ class GameScene extends Phaser.Scene{
         overlay.setDepth(199)
         overlay.setInteractive();
         //the sprite
-        let character = this.add.sprite(this.w2, this.h2, node.sprite);
-        character.setOrigin(.5);
-        //have the sprite play an animation 
-        character.play(node.animation);
-        character.setDepth(90);
+        let character;
+        if(node.sprite !== ""){
+            character = this.add.sprite(this.w2, this.h2, node.sprite);
+            character.setOrigin(.5);
+            //have the sprite play an animation 
+            character.play(node.animation);
+            character.setDepth(90);
+        }
         //the dialogue box
         let dialogueBox = this.add.rectangle(0, textY, this.width, this.height / 3, '0x111111');
         dialogueBox.setOrigin(0);
@@ -333,7 +352,7 @@ class GameScene extends Phaser.Scene{
                             linkButtons[a].setDepth(200);
                             linkButtons[a].setInteractive();
                             linkButtons[a].on('pointerdown', () => {
-                                character.destroy();
+                                if(character != undefined) character.destroy();
                                 dialogueBox.destroy();
                                 namePlate.destroy();
                                 dialogueText.destroy();
@@ -343,7 +362,7 @@ class GameScene extends Phaser.Scene{
                                 linkButtons.forEach((element) => {element.destroy()});
                                 overlay.destroy();
                                 this.menuTab.setInteractive();
-                                this.startDialogue(node.links[a]);
+                                this.startDialogue(node.links[a], afterFunc);
                             })
                             
                             //this is the text
@@ -357,7 +376,7 @@ class GameScene extends Phaser.Scene{
                             links[a].setDepth(201);
                         }
                     }else{  //the dialogue is over, cleanup everything
-                        character.destroy();
+                        if(character != undefined) character.destroy();
                         dialogueBox.destroy();
                         namePlate.destroy();
                         dialogueText.destroy();
@@ -366,6 +385,7 @@ class GameScene extends Phaser.Scene{
                         sceneFilter.destroy();
                         overlay.destroy();
                         this.menuTab.setInteractive();
+                        afterFunc();
                     }
                 }
             }

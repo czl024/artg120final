@@ -31,6 +31,8 @@ class Test extends GameScene{
         blount.setDoor('test2');    //sets the scene this door leads to
         blount.scale = .5;
         blount.render.scale = .5;
+
+        this.startDialogue('test', () => {console.log("sex")});
     }
 }
 
@@ -55,9 +57,31 @@ class Intro1 extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'intro1');
+        this.debug = true;
+        this.bg = this.add.image(this.w2, this.h2, 'intro1bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+        this.tutText = this.add.text(890, 880, "", {
+            fontFamily: 'bahn',
+            fontSize: 50,
+            alpha: .6,
+            color: '#f0f0f0',
+		    align: 'center'
+        });
+        this.tutText.setOrigin(.5);
+
+        if(!this.hasFlag("intro1 done") && !this.debug){
+            this.startDialogue('1', () => {this.tutText.setText("^ Click on items to pick them up")});
+        }
+
+        if(this.hasItem("Wallet")) this.tutText.setText("");
+        else if(this.debug && !this.hasItem("Wallet")) this.tutText.setText("^ Click on items to pick them up");
+
+        let wallet = new storyObject(this, 'Wallet', 550, 785, true, true, true, true);
+        wallet.setDoor('intro2')
+        wallet.addDialogue([], [], [], [], "wallet");
+        wallet.scale = 2;
+        wallet.render.scale = 2;
     }
 
     sceneTransition(){
@@ -71,10 +95,13 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
+        console.log(this.dialogue);
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'intro2');
+        this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('int2-1', () => {this.goToScene('intro3')})
     }
 
     sceneTransition(){
@@ -89,9 +116,13 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'intro3');
+        this.bg = this.add.image(this.w2, this.h2, 'intro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('1', () => {
+            this.goToScene('interro1');
+        })
     }
 
     sceneTransition(){
@@ -106,7 +137,7 @@ class Interrogation1 extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'interro1');
+        this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -123,7 +154,7 @@ class Interrogation2 extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'interro2');
+        this.bg = this.add.image(this.w2, this.h2, 'interro2bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -140,7 +171,7 @@ class Interrogation3 extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'interro3');
+        this.bg = this.add.image(this.w2, this.h2, 'interro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -210,6 +241,7 @@ class MainMenu extends Phaser.Scene{
     }
 
     create(){
+        this.debug = false;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'mmbg');
         this.bg.setOrigin(.5);
@@ -226,7 +258,7 @@ class MainMenu extends Phaser.Scene{
             this.button.fillColor = 0xa73db3;
         })
         this.button.on('pointerdown', () => {
-            this.scene.start('test');
+            this.scene.start('intro1');
         })
         this.buttonText = this.add.text(this.w2, 3 * (this.height / 4), 'Start Game', {
             fontFamily: 'bahn',
@@ -235,6 +267,15 @@ class MainMenu extends Phaser.Scene{
             align: 'center'
         });
         this.buttonText.setOrigin(.5);
+
+        //test scene button
+        if(this.debug){
+            this.testButton = this.button = this.add.rectangle(this.w2, 3 * (this.height / 4) + 100, 300, 75, '0xa73db3');
+            this.testButton.setInteractive();
+            this.testButton.on('pointerdown', () => {
+                this.scene.start('test');
+            })
+        }
     }
 }
 
@@ -284,6 +325,11 @@ class Loader extends Phaser.Scene{
             frameWidth: 1024,
             frameHeight: 1280,
         });
+
+        this.load.spritesheet('Wallet', "assets/spritesheets/Wallet.png",{
+            frameWidth: 50,
+            frameHeight: 50,
+        });
     }
 }
 
@@ -294,7 +340,8 @@ const game = new Phaser.Game({
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
         width: 1920,
-        height: 1080
+        height: 1080,
+        pixelArt: true
     },
     //every scene needs to be in here, so dont forget
     scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe],

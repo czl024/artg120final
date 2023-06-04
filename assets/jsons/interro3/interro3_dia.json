@@ -1,0 +1,15 @@
+{
+    "dialogue":{
+        "":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         [""],
+            "links":        [],
+            "linktext":     {}
+        }
+    }
+}

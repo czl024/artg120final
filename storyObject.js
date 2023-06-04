@@ -37,7 +37,7 @@
         this.isDoor = isDoor;
         
         this.on('pointerover', () => { this.mouseover(); });
-        this.on('pointerdown', () => { this.onClick(); });
+        this.on('pointerdown', () => { this.onClick(true); });
         this.on('pointerout', () => {
             this.render.clearTint();
             this.parentScene.clearMessage();
@@ -58,7 +58,7 @@
 
 
 
-    onClick(){
+    onClick(override){
         if(!this.parentScene.dialogueActive){
             if(this.hasDialogue){
                 let isValid = true;
@@ -101,11 +101,13 @@
 
                     //start the first dialogue that meets all checks
                     if(isValid){
-                        this.parentScene.startDialogue(this.dialogueNodeStarts[a]);
+                        this.parentScene.startDialogue(this.dialogueNodeStarts[a], () => { this.onClick(false) })
+
                         break;
                     }
                     isValid = true;
                 }
+                if(override) return;
             }
             if(this.isPickable){
                 this.parentScene.addItem(this.key);

@@ -1,0 +1,26 @@
+{
+    "dialogue":{
+        "int2-1":{
+            "flags":        [],
+            "items":        [],
+            "itemsRemoved": [],
+            "sprite":       "",
+            "nameplate":    "",
+            "animation":    "",
+            "text":         ["The walk to the store was uneventful. The grocery store being close is probably why rent is so high, but at least you don't need a car.",
+                            "Grabbing a plastic basket from a rack, you take a few steps through the automatic glass doors, a familiar lighthearted chime tickles your ears. ",
+                            "It's pretty quiet in the store, though that's not surprising given it's evening…er…",
+                            "7:03 PM, Thursday.",
+                            "It's been a week, maybe they'll finally have mangos.",
+                            "After an exceptionally uneventful few minutes of browsing and FINALLY getting mangos, you check out.",
+                            "The last bit of sleep has since left you, leaving in its place your general tiredness, something lingering ever since you were in the final stretches of your last project.",
+                            "It’s been completed two days ago, but you haven’t quite gotten your sleep schedule back. Maybe tomorrow you'll wake up before 4 PM?",
+                            "Maybe you should get some coffee, or an energy drink? Caffeine isn't a great idea, but it's not a bad one…",
+                            "You idly turn your head around, considering caffeinated drinks when a silhouette flies away from your peripheral vision, startling you back into reality.",
+                            "Maybe just regular old sleep will be better."],
+            "links":        [],
+            "linktext":     {},
+            "quietLink":    ""
+        }
+    }
+}
