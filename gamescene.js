@@ -375,6 +375,18 @@ class GameScene extends Phaser.Scene{
                             links[a].setOrigin(.5);
                             links[a].setDepth(201);
                         }
+                    }else if(node.quietLink !== ""){
+                        if(character != undefined) character.destroy();
+                        dialogueBox.destroy();
+                        namePlate.destroy();
+                        dialogueText.destroy();
+                        nameText.destroy();
+                        sceneFilter.destroy();
+                        links.forEach((element) => {element.destroy()});
+                        linkButtons.forEach((element) => {element.destroy()});
+                        overlay.destroy();
+                        this.menuTab.setInteractive();
+                        this.startDialogue(node.quietLink, afterFunc);
                     }else{  //the dialogue is over, cleanup everything
                         if(character != undefined) character.destroy();
                         dialogueBox.destroy();

@@ -11,7 +11,7 @@
                             "The walk back is shockingly uneventful. You walk a little faster than you usually do."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    "1"
+            "quietLink":    "2"
         },
         "2":{
             "flags":        [],
@@ -23,7 +23,7 @@
             "text":         ["H-Hey, you there!"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    "2"
+            "quietLink":    "3"
         },
         "3":{
             "flags":        [],
@@ -35,7 +35,7 @@
             "text":         ["Your head snaps backwards. An individual stands a small distance away, awkwardly fiddling with the sleeves of their shirt. Their appearance was…very much out of place."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    "3"
+            "quietLink":    "4"
         },
         "4":{
             "flags":        [],
@@ -51,7 +51,7 @@
                             "too much of an inconvenience with you?"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    "4"
+            "quietLink":    "5"
         },
         "5":{
             "flags":        [],

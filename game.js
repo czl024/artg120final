@@ -57,7 +57,7 @@ class Intro1 extends GameScene{
 
     afterCreate(){
         //bg
-        this.debug = true;
+        //this.debug = true;
         this.bg = this.add.image(this.w2, this.h2, 'intro1bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
@@ -95,13 +95,14 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-        console.log(this.dialogue);
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        this.startDialogue('int2-1', () => {this.goToScene('intro3')})
+        if(this.debug) this.goToScene('intro3');
+        else this.startDialogue('int2-1', () => {this.goToScene('intro3')});
     }
 
     sceneTransition(){
@@ -116,13 +117,13 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
+        //this.debug = true;
         this.bg = this.add.image(this.w2, this.h2, 'intro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        this.startDialogue('1', () => {
-            this.goToScene('interro1');
-        })
+        if(this.debug) this.goToScene('interro1');
+        else this.startDialogue('1', () => { this.goToScene('interro1'); });
     }
 
     sceneTransition(){
