@@ -1,3 +1,8 @@
 {
-    "mouseover": {}
+    "mouseover": {
+        "jimmy": {
+            "text": "A funny looking character",
+            "longtext": "Also the person who kidnapped you."
+        }
+    }
 }
