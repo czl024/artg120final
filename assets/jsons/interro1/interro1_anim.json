@@ -1,3 +1,22 @@
 {
-    "animations": []
+    "animations": [
+        {
+            "key": "closed",
+            "spriteSheet": "door",
+            "startFrame": 0,
+            "endFrame": 0,
+            "firstFrame": 0,
+            "frameRate": 1,
+            "repeat": -1
+        },
+        {
+            "key": "open",
+            "spriteSheet": "door",
+            "startFrame": 1,
+            "endFrame": 1,
+            "firstFrame": 0,
+            "frameRate": 1,
+            "repeat": -1
+        }      
+    ]
 }

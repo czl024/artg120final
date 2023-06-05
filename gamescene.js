@@ -203,22 +203,34 @@ class GameScene extends Phaser.Scene{
 
     goToScene(key){
         //if sceneTransition isnt implemented then run the default transition
-        if(this.sceneTransition !== undefined) this.sceneTransition();
-        else this.defaultTransition();
-        this.cache.json.remove('dialogue');
-        this.cache.json.remove('anims');
-        this.cache.json.remove('mouseover');
-        this.scene.start(key, {
-            items: this.items,
-            flags: this.flags,
-            relationships: this.relationships
-        });
+        let timer;
+        if(this.sceneTransition !== undefined) timer = this.sceneTransition();
+        else{
+            timer = 1000;
+            this.defaultTransition();
+        }
+        this.time.delayedCall(timer, () => {
+            this.cache.json.remove('dialogue');
+            this.cache.json.remove('anims');
+            this.cache.json.remove('mouseover');
+            this.scene.start(key, {
+                items: this.items,
+                flags: this.flags,
+                relationships: this.relationships
+            });
+        })
     }
 
 
 
     defaultTransition(){
-
+        let overlay = this.add.rectangle(this.w2, this.h2, this.width, this.height, '0x101010')
+        this.add.tween({
+            targets: overlay,
+            alpha: {from: 0, to: 1, ease: "linear"},
+            duration: 1000,
+            onComplete: () => { overlay.destroy(); }
+        })
     }
 
 

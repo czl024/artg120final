@@ -56,8 +56,8 @@ class Intro1 extends GameScene{
     constructor(){ super('intro1', "home") };
 
     afterCreate(){
+        //this.debug = true;
         //bg
-        this.debug = true;
         this.bg = this.add.image(this.w2, this.h2 + 100, 'intro1bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 2.1;
@@ -96,11 +96,11 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
-        this.bg.scale = 4;
+        this.bg.scale = 1;
 
         if(this.debug) this.goToScene('intro3');
         else this.startDialogue('int2-1', () => {this.goToScene('intro3')});
@@ -118,10 +118,10 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
-        this.debug = true;
-        this.bg = this.add.image(this.w2, this.h2, 'intro3bg');
+        //this.debug = true;
+        this.bg = this.add.image(1 * this.width / 9 - 200, 1 * this.height / 10 - 500, 'intro3bg');
         this.bg.setOrigin(.5);
-        this.bg.scale = 4;
+        this.bg.scale = 3;
 
         if(this.debug) this.goToScene('interro1');
         else this.startDialogue('1', () => { this.goToScene('interro1'); });
@@ -138,7 +138,8 @@ class Interrogation1 extends GameScene{
     constructor(){ super('interro1', "medbay") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
+        if(this.debug) this.goToScene("interro2")
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
         this.bg.setOrigin(.5);
@@ -152,6 +153,14 @@ class Interrogation1 extends GameScene{
             jimmy.scale = 2.5;
             jimmy.render.scale = 2.5;
             jimmy.addDialogue([], [], [], [], '1');
+            let door = new storyObject(this, 'door', 1750, 280, false, false, false, true);
+            door.setDoor('interro2');
+            door.on('pointerover', () => {
+                door.playAnim('open');
+            })
+            door.on('pointerout', () => {
+                door.playAnim('closed');
+            })
         });
     }
 
@@ -170,6 +179,24 @@ class Interrogation2 extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'interro2bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let thaliak = new storyObject(this, 'thaliak', this.w2, this.h2 + 80, false, true, true, false);
+        thaliak.scale = 2.5;
+        thaliak.render.scale = 2.5;
+        thaliak.addDialogue([], [], [], [], 'interrogation1')
+        thaliak.setDepth(2);
+        thaliak.render.setDepth(1);
+
+        let door = new storyObject(this, 'door', this.w2, 300, false, false, false, true);
+        door.setDoor('interro3');
+        door.on('pointerover', () => {
+            door.playAnim('open');
+        })
+        door.on('pointerout', () => {
+            door.playAnim('closed');
+        })
+
+        this.startDialogue('1', () => {})
     }
 
     sceneTransition(){
@@ -187,6 +214,8 @@ class Interrogation3 extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'interro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+
     }
 
     sceneTransition(){
@@ -352,6 +381,11 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('thaliak', "assets/spritesheets/Thaliak.png",{
             frameWidth: 120,
             frameHeight: 160,
+        });
+
+        this.load.spritesheet('door', "assets/spritesheets/door.png",{
+            frameWidth: 229,
+            frameHeight: 381,
         });
     }
 }
