@@ -9,7 +9,8 @@
             "animation":    "",
             "text":         [""],
             "links":        [],
-            "linktext":     {}
+            "linktext":     {},
+            "quietLink":    ""
         }
     }
 }
