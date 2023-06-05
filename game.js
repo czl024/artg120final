@@ -57,11 +57,12 @@ class Intro1 extends GameScene{
 
     afterCreate(){
         //bg
-        //this.debug = true;
-        this.bg = this.add.image(this.w2, this.h2, 'intro1bg');
+        this.debug = true;
+        this.bg = this.add.image(this.w2, this.h2 + 100, 'intro1bg');
         this.bg.setOrigin(.5);
-        this.bg.scale = 4;
-        this.tutText = this.add.text(890, 880, "", {
+        this.bg.scale = 2.1;
+
+        this.tutText = this.add.text(1000, 540, "", {
             fontFamily: 'bahn',
             fontSize: 50,
             alpha: .6,
@@ -71,13 +72,13 @@ class Intro1 extends GameScene{
         this.tutText.setOrigin(.5);
 
         if(!this.hasFlag("intro1 done") && !this.debug){
-            this.startDialogue('1', () => {this.tutText.setText("^ Click on items to pick them up")});
+            this.startDialogue('1', () => {this.tutText.setText("< Click on items to pick them up")});
         }
 
         if(this.hasItem("Wallet")) this.tutText.setText("");
-        else if(this.debug && !this.hasItem("Wallet")) this.tutText.setText("^ Click on items to pick them up");
+        else if(this.debug && !this.hasItem("Wallet")) this.tutText.setText("< Click on items to pick them up");
 
-        let wallet = new storyObject(this, 'Wallet', 550, 785, true, true, true, true);
+        let wallet = new storyObject(this, 'Wallet', 595, 540, true, true, true, true);
         wallet.setDoor('intro2')
         wallet.addDialogue([], [], [], [], "wallet");
         wallet.scale = 2;
@@ -95,7 +96,7 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-        //this.debug = true;
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
@@ -117,7 +118,7 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
-        //this.debug = true;
+        this.debug = true;
         this.bg = this.add.image(this.w2, this.h2, 'intro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
@@ -137,10 +138,21 @@ class Interrogation1 extends GameScene{
     constructor(){ super('interro1', "medbay") };
 
     afterCreate(){
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let overlay = this.add.rectangle(this.w2, this.h2, this.width, this.height, '0xF0F0F0');
+
+        this.startDialogue('intro1', () => {
+            overlay.destroy();
+            let jimmy = new storyObject(this, 'jimmy', 1120, 530, false, true, true, false);
+            jimmy.scale = 2.5;
+            jimmy.render.scale = 2.5;
+            jimmy.addDialogue([], [], [], [], '1');
+        });
     }
 
     sceneTransition(){
@@ -330,6 +342,16 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('Wallet', "assets/spritesheets/Wallet.png",{
             frameWidth: 50,
             frameHeight: 50,
+        });
+
+        this.load.spritesheet('jimmy', "assets/spritesheets/JimmySpritesheet.png",{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
+        this.load.spritesheet('thaliak', "assets/spritesheets/Thaliak.png",{
+            frameWidth: 120,
+            frameHeight: 160,
         });
     }
 }

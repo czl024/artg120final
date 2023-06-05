@@ -256,8 +256,9 @@ class GameScene extends Phaser.Scene{
         //the sprite
         let character;
         if(node.sprite !== ""){
-            character = this.add.sprite(this.w2, this.h2, node.sprite);
+            character = this.add.sprite(this.w2, this.h2 + 50, node.sprite);
             character.setOrigin(.5);
+            character.scale = 6.5;
             //have the sprite play an animation 
             character.play(node.animation);
             character.setDepth(90);

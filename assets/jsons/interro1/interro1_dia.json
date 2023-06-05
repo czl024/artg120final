@@ -78,7 +78,7 @@
                             "They nervously fiddle with some device on their body."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "2"
         },
         "2":{
             "flags":        [],
@@ -90,7 +90,7 @@
             "text":         ["Können Sie mich hören?"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "3"
         },
         "3":{
             "flags":        [],
@@ -102,7 +102,7 @@
             "text":         ["You shoot them the most confused face your body can currently muster."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "4"
         },
         "4":{
             "flags":        [],
@@ -114,7 +114,7 @@
             "text":         ["Ah, falsche Sprache."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "5"
         },
         "5":{
             "flags":        [],
@@ -126,7 +126,7 @@
             "text":         ["Another moment is spent adjusting the same object as before."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "6"
         },
         "6":{
             "flags":        [],
@@ -242,7 +242,7 @@
                             "The air becomes thick, metaphorically speaking. This person has some air of authority."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "9"
         },
         "9":{
             "flags":        [],
@@ -254,7 +254,7 @@
             "text":         ["Hello there."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "10"
         },
         "10":{
             "flags":        [],
@@ -268,7 +268,7 @@
                             "The two of them turn to each other."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "11"
         },
         "11":{
             "flags":        [],
@@ -280,7 +280,7 @@
             "text":         ["You have fulfilled your assigned task, if you would permit me to take over?"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "12"
         },
         "12":{
             "flags":        [],
@@ -292,7 +292,7 @@
             "text":         ["I, uh.", "Are you sure?"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "13"
         },
         "13":{
             "flags":        [],
@@ -304,7 +304,7 @@
             "text":         ["People generally don't react well to their kidnappers."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "14"
         },
         "14":{
             "flags":        [],
@@ -317,7 +317,7 @@
                             "You find yourself alone staring at an even more unfamiliar individual."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "15"
         },
         "15":{
             "flags":        [],
@@ -329,7 +329,7 @@
             "text":         ["Now then, how are you feeling?"],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "16"
         },
         "16":{
             "flags":        [],
@@ -342,20 +342,20 @@
                             "Excluding the whole \"kidnapped by extreme cosplayers\" bit, you're feeling quite alright."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "17"
         },
         "17":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
-            "nameplate":    "",
+            "nameplate":    "The Other Stranger",
             "animation":    "",
             "text":         ["I get this is a lot to deal with. There're a lot of important business both of us need to attend to, but it would, of course, be best if you weren't so disoriented.",
                             "My name is Thaliak, by the way, and my assistant is called Jimmy, at least around here."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "18"
         },
         "18":{
             "flags":        [],
@@ -381,7 +381,7 @@
                             "Thankfully, Jimmy took care to not hurt you on your way here, your internal functions seem to all be pretty normal."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "18"
         },
         "19b":{
             "flags":        [],
@@ -395,7 +395,7 @@
                             "My people come from a planet pretty similar to yours, though I can say there's a lot less water."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "18"
         },
         "19c":{
             "flags":        [],
@@ -409,40 +409,43 @@
                             "They're quite nice once you get to know them, promise."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "18"
         },
         "19d":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
-            "nameplate":    "",
+            "nameplate":    "Thaliak",
             "animation":    "",
-            "text":         [""],
+            "text":         ["Well, hm. We'll discuss that once you're ready.",
+                            "In short, no one's in trouble, the societies of Earth are uh…",
+                            "how do I put this?",
+                            "Being a minor annoyance."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "18"
         },
         "20":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
-            "nameplate":    "",
+            "nameplate":    "Thaliak",
             "animation":    "",
-            "text":         [""],
+            "text":         ["With that now taken care of, once you're ready, please join me in the brig. No, you're not a prisoner, but that's where a lot of the recording equipment is and there's, frankly, not a lot of other places to hold a conversation of this import."],
             "links":        [],
             "linktext":     {},
-            "quietLink":    ""
+            "quietLink":    "21"
         },
-        "":{
+        "21":{
             "flags":        [],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
             "nameplate":    "",
             "animation":    "",
-            "text":         [""],
+            "text":         ["Thaliak leaves the room and leaves you alone in the medical bay. As you sit up against the edge of the bed, your bare feet touch the cold floor. It's weirdly textured but it allows you to walk without slipping."],
             "links":        [],
             "linktext":     {},
             "quietLink":    ""

@@ -60,7 +60,7 @@
 
     onClick(override){
         if(!this.parentScene.dialogueActive){
-            if(this.hasDialogue){
+            if(this.hasDialogue && override){
                 let isValid = true;
 
                 //for all node starts
@@ -102,24 +102,23 @@
                     //start the first dialogue that meets all checks
                     if(isValid){
                         this.parentScene.startDialogue(this.dialogueNodeStarts[a], () => { this.onClick(false) })
-
                         break;
                     }
                     isValid = true;
                 }
-                if(override) return;
-            }
-            if(this.isPickable){
-                this.parentScene.addItem(this.key);
-            }
-            if(this.isDoor){
-                this.parentScene.clearMessage();
-                this.parentScene.goToScene(this.doorKey);
-            }
-            if(this.disappearsOnInteraction){
-                this.parentScene.clearMessage();
-                this.render.destroy();
-                this.destroy();
+            }else{
+                if(this.isPickable){
+                    this.parentScene.addItem(this.key);
+                }
+                if(this.isDoor){
+                    this.parentScene.clearMessage();
+                    this.parentScene.goToScene(this.doorKey);
+                }
+                if(this.disappearsOnInteraction){
+                    this.parentScene.clearMessage();
+                    this.render.destroy();
+                    this.destroy();
+                }
             }
         }
     }
