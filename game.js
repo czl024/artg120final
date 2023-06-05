@@ -56,7 +56,7 @@ class Intro1 extends GameScene{
     constructor(){ super('intro1', "home") };
 
     afterCreate(){
-        //this.debug = true;
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2 + 100, 'intro1bg');
         this.bg.setOrigin(.5);
@@ -96,7 +96,7 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-        //this.debug = true;
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
@@ -118,7 +118,7 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
-        //this.debug = true;
+        this.debug = true;
         this.bg = this.add.image(1 * this.width / 9 - 200, 1 * this.height / 10 - 500, 'intro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 3;
@@ -138,7 +138,7 @@ class Interrogation1 extends GameScene{
     constructor(){ super('interro1', "medbay") };
 
     afterCreate(){
-        //this.debug = true;
+        this.debug = true;
         if(this.debug) this.goToScene("interro2")
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
@@ -154,7 +154,7 @@ class Interrogation1 extends GameScene{
             jimmy.render.scale = 2.5;
             jimmy.addDialogue([], [], [], [], '1');
             let door = new storyObject(this, 'door', 1750, 280, false, false, false, true);
-            door.setDoor('interro2');
+            door.setDoor('interro2', ["talked to jimmy"], [], [], []);
             door.on('pointerover', () => {
                 door.playAnim('open');
             })
@@ -175,6 +175,8 @@ class Interrogation2 extends GameScene{
     constructor(){ super('interro2', "brig") };
 
     afterCreate(){
+        this.debug = true;
+        if(this.debug) this.goToScene('interro3');
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro2bg');
         this.bg.setOrigin(.5);
@@ -188,7 +190,7 @@ class Interrogation2 extends GameScene{
         thaliak.render.setDepth(1);
 
         let door = new storyObject(this, 'door', this.w2, 300, false, false, false, true);
-        door.setDoor('interro3');
+        door.setDoor('interro3', ["interrogated"], [], [], []);
         door.on('pointerover', () => {
             door.playAnim('open');
         })
@@ -215,7 +217,12 @@ class Interrogation3 extends GameScene{
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-
+        let thaliak = new storyObject(this, 'thaliak', this.w2, this.h2, false, true, false, true);
+        thaliak.scale = 2.5;
+        thaliak.render.scale = 2.5;
+        thaliak.addDialogue(["talked to thaliak"], [], [], [], 'leave1');
+        thaliak.addDialogue([], [], [], [], '1');
+        thaliak.setDoor('hub', ["confirmed thaliak"], [], [], []);
     }
 
     sceneTransition(){
@@ -223,19 +230,6 @@ class Interrogation3 extends GameScene{
     }
 }
 
-
-
-class Outro extends GameScene{
-    constructor(){ super('outro', "outro") };
-
-    afterCreate(){
-
-    }
-
-    sceneTransition(){
-        
-    }
-}
 
 
 
@@ -243,7 +237,10 @@ class Sagittarius extends GameScene{
     constructor(){ super('hub', "sagittarius hub") };
 
     afterCreate(){
-
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'hubbg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
     }
 
     sceneTransition(){
@@ -255,6 +252,125 @@ class Sagittarius extends GameScene{
 
 class SagittariusCafe extends GameScene{
     constructor(){ super('hubcafe', "sagittarius coffee shop") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'cafebg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class SFAB1054 extends GameScene{
+    constructor(){ super('sfab-10-54', "internal astronomy location") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'sfab-10-54bg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class SFAB1054Office extends GameScene{
+    constructor(){ super('sfab-10-54office', "internal astronomy office") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'sfab-10-54officebg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Dianmu extends GameScene{
+    constructor(){ super('dianmu', "it location") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'dianmubg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class DianmuOffice extends GameScene{
+    constructor(){ super('dianmuoffice', "it office") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'dianmuofficebg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Nzambici extends GameScene{
+    constructor(){ super('nzambici', "preftl planet") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'nzambicibg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class NzambiciOffice extends GameScene{
+    constructor(){ super('nzambicioffice', "preftl office") };
+
+    afterCreate(){
+        //bg
+        this.bg = this.add.image(this.w2, this.h2, 'nzambiciofficebg');
+        this.bg.setOrigin(.5);
+        this.bg.scale = 4;
+    }
+
+    sceneTransition(){
+        
+    }
+}
+
+
+
+class Outro extends GameScene{
+    constructor(){ super('outro', "outro") };
 
     afterCreate(){
 
@@ -288,6 +404,14 @@ class MainMenu extends Phaser.Scene{
         this.bg = this.add.image(this.w2, this.h2, 'mmbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        //title text
+        this.add.text(this.w2, this.h2 / 2, "Wireless Discordance", {
+            fontFamily: 'bahn',
+            fontSize: 175,
+            color: '#F0F0F0',
+            align: 'center'
+        }).setOrigin(.5)
 
         //start game button
         this.button = this.add.rectangle(this.w2, 3 * (this.height / 4), 300, 75, '0xa73db3');
@@ -350,6 +474,14 @@ class Loader extends Phaser.Scene{
         this.load.image('interro1bg', `assets/backgrounds/interrogation1.png`);
         this.load.image('interro2bg', `assets/backgrounds/interrogation2.png`);
         this.load.image('interro3bg', `assets/backgrounds/interrogation3.png`);
+        this.load.image('hubbg', `assets/backgrounds/SagittariusGalacticHub`);
+        this.load.image('cafebg', `assets/backgrounds/SagittariusCoffeeShop.png`);
+        this.load.image('sfab-10-54bg', `assets/backgrounds/StationOrbitingBrownDwarf.png`);
+        this.load.image('sfab-10-54officebg', `assets/backgrounds/InternalAstronomyOffice.png`);
+        this.load.image('dianmubg', `assets/backgrounds/FrozenPlanet.png`);
+        this.load.image('dianmuofficebg', `assets/backgrounds/InternalAstronomyOffice.png`);
+        this.load.image('nzambicibg', `assets/backgrounds/UnderwaterCity.png`);
+        this.load.image('nzambiciofficebg', `assets/backgrounds/PreLightspeedManagementOffice.png`);
 
         //spritesheets for animations
         this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
@@ -402,6 +534,6 @@ const game = new Phaser.Game({
         pixelArt: true
     },
     //every scene needs to be in here, so dont forget
-    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe],
+    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, SFAB1054, SFAB1054Office, Dianmu, DianmuOffice, Nzambici, NzambiciOffice],
     title: "to be determined",
 });

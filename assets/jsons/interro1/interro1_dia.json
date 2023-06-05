@@ -439,7 +439,7 @@
             "quietLink":    "21"
         },
         "21":{
-            "flags":        [],
+            "flags":        ["talked to jimmy"],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",

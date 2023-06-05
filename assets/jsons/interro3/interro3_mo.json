@@ -1,3 +1,8 @@
 {
-    "mouseover": {}
+    "mouseover": {
+        "thaliak": {
+            "text": "Thaliak",
+            "longtext": "Looks like a professional. Probably because they are."
+        }
+    }
 }

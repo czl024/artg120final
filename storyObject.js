@@ -18,6 +18,7 @@
     render;
     dialogueRequirements;
     dialogueNodeStarts;
+    doorRequirements;
     doorKey;
     isDoor;
 
@@ -44,6 +45,7 @@
         });
 
         this.dialogueRequirements = {flag: [], noflag: [], item: [], noitem: []}
+        this.doorRequirements = {flag: [], noflag: [], item: [], noitem: []}
         this.dialogueNodeStarts = [];
     }
 
@@ -65,43 +67,13 @@
 
                 //for all node starts
                 for(let a = 0; a < this.dialogueNodeStarts.length; a++){
-                    //check to see all required flags are set
-                    for(let b = 0; b < this.dialogueRequirements.flag[a].length; b++){
-                        if(!this.parentScene.hasFlag(this.dialogueRequirements.flag[a][b])){
-                            isValid = false;
-                        }
-                    }
-
-                    //check to see if no prohibited flags are set
-                    if(isValid){
-                        for(let b = 0; b < this.dialogueRequirements.noflag[a].length; b++){
-                            if(this.parentScene.hasFlag(this.dialogueRequirements.noflag[a][b])){
-                                isValid = false;
-                            }
-                        }
-                    }
-
-                    //check to see if all items are in inventory
-                    if(isValid){
-                        for(let b = 0; b < this.dialogueRequirements.item[a].length; b++){
-                            if(!this.parentScene.hasItem(this.dialogueRequirements.item[a][b])){
-                                isValid = false;
-                            }
-                        }
-                    }
-
-                    //check to see if no prohibited items in inventory
-                    if(isValid){
-                        for(let b = 0; b < this.dialogueRequirements.noitem[a].length; b++){
-                            if(this.parentScene.hasItem(this.dialogueRequirements.noitem[a][b])){
-                                isValid = false;
-                            }
-                        }
-                    }
-
+                    isValid = this.checkFlags(a, "dia");
                     //start the first dialogue that meets all checks
                     if(isValid){
-                        this.parentScene.startDialogue(this.dialogueNodeStarts[a], () => { this.onClick(false) })
+                        let node = this.dialogueNodeStarts[a];
+                        this.parentScene.startDialogue(node, () => {
+                            this.onClick(false);
+                        })
                         break;
                     }
                     isValid = true;
@@ -111,8 +83,12 @@
                     this.parentScene.addItem(this.key);
                 }
                 if(this.isDoor){
-                    this.parentScene.clearMessage();
-                    this.parentScene.goToScene(this.doorKey);
+                    let isValid = true;
+                    if(this.doorRequirements.flag[0] !== undefined) isValid = this.checkFlags(0, "door");
+                    if(isValid){
+                        this.parentScene.clearMessage();
+                        this.parentScene.goToScene(this.doorKey);
+                    }
                 }
                 if(this.disappearsOnInteraction){
                     this.parentScene.clearMessage();
@@ -121,6 +97,36 @@
                 }
             }
         }
+    }
+
+
+
+    checkFlags(index, mode){
+        let checkArray;
+        if(mode === "dia") checkArray = this.dialogueRequirements;
+        else if(mode === "door") checkArray = this.doorRequirements;
+
+        for(let a = 0; a < checkArray.flag[index].length; a++){
+            if(!this.parentScene.hasFlag(checkArray.flag[index][a])){
+                return(false)
+            }
+        }
+        for(let a = 0; a < checkArray.noflag[index].length; a++){
+            if(this.parentScene.hasFlag(checkArray.flag[index][a])){
+                return(false)
+            }
+        }
+        for(let a = 0; a < checkArray.item[index].length; a++){
+            if(!this.parentScene.hasItem(checkArray.flag[index][a])){
+                return(false)
+            }
+        }
+        for(let a = 0; a < checkArray.noitem[index].length; a++){
+            if(this.parentScene.hasItem(checkArray.flag[index][a])){
+                return(false)
+            }
+        }
+        return(true);
     }
 
 
@@ -151,5 +157,11 @@
 
 
 
-    setDoor(key){ this.doorKey = key }
+    setDoor(key, flags, noflags, items, noitems){
+        this.doorKey = key
+        this.doorRequirements.flag.push(flags);
+        this.doorRequirements.noflag.push(noflags);
+        this.doorRequirements.item.push(items);
+        this.doorRequirements.noitem.push(noitems);
+    }
 }

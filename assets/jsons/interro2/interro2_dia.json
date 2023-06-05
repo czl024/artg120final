@@ -368,7 +368,7 @@
             "quietLink":    "interrogation10"
         },
         "interrogation10":{
-            "flags":        [],
+            "flags":        ["interrogated"],
             "items":        [],
             "itemsRemoved": [],
             "sprite":       "",
