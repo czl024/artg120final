@@ -145,5 +145,11 @@
 
 
 
+    playAnim(key){
+        this.render.play(key);
+    }
+
+
+
     setDoor(key){ this.doorKey = key }
 }
