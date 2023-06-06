@@ -492,7 +492,138 @@ class Outro extends GameScene{
     constructor(){ super('outro', "outro") };
 
     afterCreate(){
+        this.menuTab.destroy();
 
+        let t1 = this.add.text(this.w2, 1 * this.height / 9, "Well, you have a job. The title of Earth Chief Ambassador is yours, officially now. The paperwork finally came in, after eons.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t1.alpha = 0;
+        let t2 = this.add.text(this.w2, 2 * this.height / 9, "(Metaphorical ones, of course.)", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t2.alpha = 0;
+        let t3 = this.add.text(this.w2, 3 * this.height / 9, "It's impressive that the bureaucracy is as slow as Earth's but scaled to the galaxy.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t3.alpha = 0;
+        let t4 = this.add.text(this.w2, 4 * this.height / 9, "You are the very first galactic citizen of Earth, with your own platinum-gilded passport.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t4.alpha = 0;
+        let t5 = this.add.text(this.w2, 5 * this.height / 9, "Your office and apartment is in a small space station orbiting Alpha Centauri. You also have your very own spaceship. Jimmy is your cheuffeur now, since you have yet to pass your starship license test, not that you've tried, or plan on doing so.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t5.alpha = 0;
+        let t6 = this.add.text(this.w2, 6.5 * this.height / 9, "Your work days are filled with meetings and science lectures that everyone knows you don't understand. There's very obviously people much better qualified to learn about subspace warp tunneling but something about \"being revealed\" prevents the IT and astronomy folk from talking to humans.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t6.alpha = 0;
+        let t7 = this.add.text(this.w2, 8 * this.height / 9, "You get paid several hundred thousand credits per galactic cycle, not that you know what those are. You still are unemployed on Earth, and credits sure don't have a use there.", {
+            fontFamily: 'bahn',
+            fontSize: 40,
+            color: '#F0F0F0',
+            align: 'center',
+            wordWrap: {width: 1750, useAdvancedWrap: true}
+        }).setOrigin(.5);
+        t7.alpha = 0;
+        let theend = this.add.text(this.w2, this.h2, "The End.", {
+            fontFamily: 'bahn',
+            fontSize: 200,
+            color: '#F0F0F0',
+            align: 'center',
+        }).setOrigin(.5).setDepth(1);
+        theend.alpha = 0;
+        let endscreen = this.add.image(this.w2, this.h2, 'mmbg');
+        endscreen.setOrigin(.5);
+        endscreen.scale = 4;
+        endscreen.alpha = 0
+
+        this.add.tween({
+            targets: t1,
+            alpha: {from: 0, to: 1},
+            duration: 2500,
+            onComplete: () => {
+                this.add.tween({
+                    targets: t2,
+                    alpha: {from: 0, to: 1},
+                    duration: 500,
+                    onComplete: () => {
+                        this.add.tween({
+                            targets: t3,
+                            alpha: {from: 0, to: 1},
+                            duration: 1500,
+                            onComplete: () => {
+                                this.add.tween({
+                                    targets: t4,
+                                    alpha: {from: 0, to: 1},
+                                    duration: 1500,
+                                    onComplete: () => {
+                                        this.add.tween({
+                                            targets: t5,
+                                            alpha: {from: 0, to: 1},
+                                            duration: 4000,
+                                            onComplete: () => {
+                                                this.add.tween({
+                                                    targets: t6,
+                                                    alpha: {from: 0, to: 1},
+                                                    duration: 4000,
+                                                    onComplete: () => {
+                                                        this.add.tween({
+                                                            targets: t7,
+                                                            alpha: {from: 0, to: 1},
+                                                            duration: 4000,
+                                                            onComplete: () => {
+                                                                this.add.tween({
+                                                                    targets: [t1, t2, t3, t4, t5, t6, t7],
+                                                                    alpha: {from: 1, to: 0},
+                                                                    duration: 5000,
+                                                                    onComplete: () => {
+                                                                        this.add.tween({
+                                                                            targets: [theend, endscreen],
+                                                                            alpha: {from: 0, to: 1},
+                                                                            duration: 5000
+                                                                        })
+                                                                    }
+                                                                })
+                                                            }
+                                                        })
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+        
     }
 
     sceneTransition(){
