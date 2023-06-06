@@ -146,7 +146,7 @@ class GameScene extends Phaser.Scene{
         let thisjson = this.animations.animations;
         thisjson.forEach((x) => {
             const anim = {
-                key: x.key,
+                key: `${x.spriteSheet}_${x.key}`,
                 frames: this.anims.generateFrameNumbers(x.spriteSheet, {
                     start: x.startFrame,
                     end: x.endFrame,
@@ -272,7 +272,7 @@ class GameScene extends Phaser.Scene{
             character.setOrigin(.5);
             character.scale = 6.5;
             //have the sprite play an animation 
-            character.play(node.animation);
+            character.play(`${node.sprite}_${node.animation}`);
             character.setDepth(90);
         }
         //the dialogue box

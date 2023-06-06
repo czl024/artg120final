@@ -492,7 +492,7 @@ class Outro extends GameScene{
     constructor(){ super('outro', "outro") };
 
     afterCreate(){
-        
+
     }
 
     sceneTransition(){
