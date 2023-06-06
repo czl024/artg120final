@@ -21,7 +21,7 @@
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "???",
-            "animation": "",
+            "animation": "surprise",
             "text": [
                 "THALIAK, OH I'VE BEEN WAITING SO LONG!"
             ],
@@ -35,7 +35,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "",
-            "animation": "",
+            "animation": "surprise",
             "text": [
                 "The voice squeals as soon as the eyes belonging to the voice lock to you.",
                 "The chair they were sitting in practically flies backward."
@@ -50,7 +50,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "???",
-            "animation": "",
+            "animation": "surprise",
             "text": [
                 "AAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!"
             ],
@@ -64,7 +64,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "Thaliak",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "Please stop screaming into the ambassador's face."
             ],
@@ -78,7 +78,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "???",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "I am Veeqi, Head of Pre-Lightspeed Civilization Management. I have been DYING to meet a human!"
             ],
@@ -92,7 +92,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Come now dear, don't be shy. Please, have a seat."
             ],
@@ -106,7 +106,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "After regaining your senses, you reach for a frankly massive chair, though you suppose it's quite average-sized for a towering behemoth like Veeqi."
             ],
@@ -120,7 +120,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "surprise",
             "text": [
                 "No no no, my lap is far more comfortable!"
             ],
@@ -150,7 +150,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Oh, fine.",
                 "O, THALIAK, WOE IS I THOU HAST TO TEMPER ME SO~!"
@@ -165,7 +165,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Thaliak just crosses his arms impatiently.",
                 "Veeqi clears their throat, which rumbles the air of the office."
@@ -180,7 +180,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Right, after doing study on your race for 400 Earth years and getting a degree, I simply can not think about anything else.",
                 "Ooh, that's probably such a long time for you!",
@@ -197,7 +197,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "Thaliak shoots Veeqi with their invisible eye lasers again."
             ],
@@ -211,7 +211,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "surprise",
             "text": [
                 "Just let me gush about humans some more~!"
             ],
@@ -225,7 +225,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "Thaliak's eye beams are reaching maximum power."
             ],
@@ -239,7 +239,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Fiiiine~",
                 "So, business!",
@@ -258,7 +258,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "You are unsure about everything.",
                 "You pinch yourself, hard.",
@@ -274,7 +274,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "I've even led projects to directly steer humanity towards integration, but so many things went different than models predicted we had to stop.",
                 "You lot are simply too individual and unpredictable!"
@@ -289,7 +289,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Now're you're VERY unsure about EVERYTHING."
             ],
@@ -303,7 +303,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "And now the astronomy folk are grumpy because you like playing with radios!",
                 "I, personally, think, there's something about humans that we don't understand.",
@@ -319,7 +319,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Veeqi seems to be on the verge of starting a very long speech that you kinda wanna hear but know Thaliak would rather punch a giant hole in the wall that leads directly outside.",
                 "What do you say to stop Veeqi?"
@@ -342,7 +342,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "Wuh?",
                 "Your job?",
@@ -358,7 +358,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "Huh!?",
                 "I suppose you only live 80 years after all…"
@@ -373,7 +373,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "N-nooo~!!"
             ],
@@ -387,7 +387,7 @@
             "itemsRemoved": [],
             "sprite": "veeqi",
             "nameplate": "Veeqi",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "So~!",
                 "You will assist me and my department in making humanity more suitable for integration into the Union and that means we can give you fancy new toys to play with!",

@@ -20,7 +20,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Th-this i-is st-standard p-procedure, I-I promise."
             ],
@@ -48,7 +48,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "Thaliak",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Here's the last stop of your tour, Ikeithea.",
                 "Now uh, I'm going to do you a favor and bring you to the department head myself.",
@@ -79,7 +79,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "I do miss Nzambici."
             ],
@@ -93,7 +93,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Hi!"
             ],
@@ -117,7 +117,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "I just love it here.",
                 "Most of my few friends work and study here.",
@@ -133,7 +133,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Jimmy starts daydreaming while looking at a terrifyingly massive eel."
             ],
@@ -147,7 +147,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "This is where Pre-FTL Management is based out of.",
                 "So much biological and sociological research is carried out here.",
@@ -163,7 +163,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "embarassed",
             "text": [
                 "I got my degree, made lots of friends, got this internship…",
                 "And a lot more th-that uh…",
@@ -179,7 +179,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Yea!"
             ],
