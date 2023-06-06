@@ -721,12 +721,12 @@ class Loader extends Phaser.Scene{
         this.load.image('menu', `${spPath}/menutab.png`);
         this.load.image('mmbg', `${bgPath}/TitleScreen.png`);
         this.load.image('titlescreen', `${bgPath}/TitleScreenTitle.png`)
-        this.load.image('intro1bg', `${bgPath}/intro1.png`);
-        this.load.image('intro2bg', `${bgPath}/intro2.png`);
-        this.load.image('intro3bg', `${bgPath}/intro3.png`);
-        this.load.image('interro1bg', `${bgPath}/interrogation1.png`);
-        this.load.image('interro2bg', `${bgPath}/interrogation2.png`);
-        this.load.image('interro3bg', `${bgPath}/interrogation3.png`);
+        this.load.image('intro1bg', `${bgPath}/Intro1.png`);
+        this.load.image('intro2bg', `${bgPath}/Intro2.png`);
+        this.load.image('intro3bg', `${bgPath}/Intro3.png`);
+        this.load.image('interro1bg', `${bgPath}/Interrogation1.png`);
+        this.load.image('interro2bg', `${bgPath}/Interrogation2.png`);
+        this.load.image('interro3bg', `${bgPath}/Interrogation3.png`);
         this.load.image('hubbg', `${bgPath}/SagittariusGalacticHub.png`);
         this.load.image('cafebg', `${bgPath}/SagittariusCoffeeShop.png`);
         this.load.image('argusbg', `${bgPath}/StationOrbitingBrownDwarf.png`);
