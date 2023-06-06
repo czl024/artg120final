@@ -358,6 +358,7 @@ class Dianmu extends GameScene{
 
     afterCreate(){
         this.debug = true;
+        if(this.debug) this.goToScene('ikeithea')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'dianmubg');
         this.bg.setOrigin(.5);
@@ -432,6 +433,24 @@ class Ikeithea extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'ikeitheabg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let door = new storyObject(this, 'ikeadoor', 0, this.h2 - 20, false, false, false, true);
+        door.setOrigin(0, .5);
+        door.render.setOrigin(0, .5)
+        door.setDoor('ikeitheaoffice', [], ["ikeithea head met"], [], []);
+        door.setDepth(2);
+        door.render.setDepth(1);
+        door.scale = 4;
+        door.render.scale = 4;
+
+        if(!this.hasFlag("ikeithea head met")){
+            this.startDialogue('intro1', () => {
+                let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
+                jimmy.addDialogue([], [], [], [], "jimmy1");
+            })
+        }else{
+
+        }
     }
 
     sceneTransition(){
@@ -449,6 +468,8 @@ class IkeitheaOffice extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'ikeitheaofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('intro1', () => {this.goToScene('ikeithea')})
     }
 
     sceneTransition(){
@@ -606,6 +627,21 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
+        this.load.spritesheet('bhaizen', `${spPath}/BhaizenSpritesheet.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
+        this.load.spritesheet('rapal', `${spPath}/RapalSpritesheets.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
+        this.load.spritesheet('veeqi', `${spPath}/VeeqiSpritesheets.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
         this.load.spritesheet('door', `${spPath}/door.png`,{
             frameWidth: 229,
             frameHeight: 381,
@@ -624,6 +660,11 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('dianmudoor', `${spPath}/dianmudoor82x115.png`,{
             frameWidth: 82,
             frameHeight: 115
+        });
+
+        this.load.spritesheet('ikeadoor', `${spPath}/ikeadoor134x205.png`,{
+            frameWidth: 134,
+            frameHeight: 205
         });
     }
 }

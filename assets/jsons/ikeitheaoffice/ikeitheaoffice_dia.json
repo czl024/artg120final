@@ -1,7 +1,7 @@
 {
     "dialogue": {
         "intro1": {
-            "flags": [],
+            "flags": ["ikeithea head met"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
@@ -80,7 +80,7 @@
             "nameplate": "???",
             "animation": "",
             "text": [
-                "I am Veeqi, Head of Pre-Lightspeed Civilization Management. I have DYING to meet a human!"
+                "I am Veeqi, Head of Pre-Lightspeed Civilization Management. I have been DYING to meet a human!"
             ],
             "links": [],
             "linktext": {},
@@ -94,7 +94,7 @@
             "nameplate": "Veeqi",
             "animation": "",
             "text": [
-                "Come now dear, don’t be shy. Please, have a seat."
+                "Come now dear, don't be shy. Please, have a seat."
             ],
             "links": [],
             "linktext": {},
@@ -266,7 +266,7 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": ""
+            "quietLink": "intro19"
         },
         "intro19": {
             "flags": [],
@@ -379,7 +379,7 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro24"
+            "quietLink": "intro22"
         },
         "intro24": {
             "flags": [],
@@ -406,24 +406,8 @@
             "animation": "",
             "text": [
                 "Thaliak desperately motions for you to jump off the chair to end this meeting.",
-                "Veeqi, desperate to keep you and/or your attention, starts talking about giving tours of the planet and the galaxy and whatever else."
-            ],
-            "links": [],
-            "linktext": {},
-            "quietLink": ""
-        },
-        "end": {
-            "flags": [],
-            "items": [],
-            "itemsRemoved": [],
-            "sprite": "",
-            "nameplate": "",
-            "animation": "",
-            "text": [
-                "Before you know it, Thaliak is almost dragging you in a full sprint towards the Thaliak.",
-                "They are met by a wall of people equally as tall as Veeqi, and equally wanting to probably squeeze you to death.",
-                "They IMPLORE Thaliak to let you to them.",
-                "Unfortunately for you, he just wants to get out of here, and lets you fend for yourself."
+                "Veeqi, desperate to keep you and/or your attention, starts talking about giving tours of the planet and the galaxy and whatever else.",
+                "Before you know it, Thaliak is almost dragging you in a full sprint towards the Thaliak."
             ],
             "links": [],
             "linktext": {},
