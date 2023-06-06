@@ -237,10 +237,15 @@ class Sagittarius extends GameScene{
     constructor(){ super('hub', "sagittarius hub") };
 
     afterCreate(){
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'hubbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue("", () => {
+            
+        })
     }
 
     sceneTransition(){
