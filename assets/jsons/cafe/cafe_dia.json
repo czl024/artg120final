@@ -108,14 +108,14 @@
             "quietLink": "intro8"
         },
         "intro8": {
-            "flags": [],
+            "flags": ["coffee bought"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "",
             "animation": "",
             "text": [
-                "They have those too"
+                "So, they have those too."
             ],
             "links": [],
             "linktext": {},
