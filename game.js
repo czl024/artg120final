@@ -245,8 +245,9 @@ class Sagittarius extends GameScene{
         door.render.scale = 4;
         door.setDoor('cafe');
 
-        //this.startDialogue("intro1", () => {});
-        if(this.hasFlag("coffee bought") || this.debug){
+        if(!this.hasFlag("hub visitted"))this.startDialogue("intro1", () => {});
+        this.addFlag("hub visitted")
+        if(this.hasFlag("coffee bought")){
             let jimmy = new storyObject(this, 'jimmy', 280, 900, false, true, false, true);
             jimmy.setDepth(2);
             jimmy.render.setDepth(1);
@@ -491,7 +492,7 @@ class Outro extends GameScene{
     constructor(){ super('outro', "outro") };
 
     afterCreate(){
-
+        
     }
 
     sceneTransition(){
@@ -694,6 +695,6 @@ const game = new Phaser.Game({
         pixelArt: true
     },
     //every scene needs to be in here, so dont forget
-    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, Argus, ArgusOffice, Dianmu, DianmuOffice, Ikeithea, IkeitheaOffice],
+    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, Argus, ArgusOffice, Dianmu, DianmuOffice, Ikeithea, IkeitheaOffice, Outro],
     title: "to be determined",
 });
