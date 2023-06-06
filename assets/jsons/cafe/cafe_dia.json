@@ -1,16 +1,125 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro1": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Er-Earthen languages are getting more popular.",
+                "They recently added English to the Universal Translator."
+            ],
+            "links": [
+                "intro2"
+            ],
+            "linktext": {
+                "intro2": "I don't have one"
+            },
+            "quietLink": ""
+        },
+        "intro2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "W-what?",
+                "Oh, right.",
+                "We will handle that in due time."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro3"
+        },
+        "intro3": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "You attempt to make small talk with Jimmy."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro4"
+        },
+        "intro4": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "It doesn't work great. They give very brief, factual, cold answers. He's either very much not wanting to talk or is very much not good at socializing."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro5"
+        },
+        "intro5": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Some people take a second to look at you. Some take a little longer than a second. Some wave at you, or at least, what you interpret as waving."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro6"
+        },
+        "intro6": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "You uh.",
+                "Can talk with the patrons, if you want.",
+                "I'll meet you back in the Thaliak once you're ready."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro7"
+        },
+        "intro7": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "As you break away from the ever-shortening line, you notice Jimmy picking out a few donuts."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro8"
+        },
+        "intro8": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "They have those too"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }
