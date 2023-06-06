@@ -20,7 +20,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "Thaliak",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Welcome to SFAB-10-54, better known as Argus.",
                 "Now here's where the Department of Internal Astronomy is based. It's quite close to Earth, actually, which is unfortunately why they're quite annoyed at it.",
@@ -37,7 +37,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "H-how can I help?"
             ],
@@ -61,7 +61,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Th-there is a lift that will lead you to the offices.",
                 "I will escord you to the head office once we reach that floor."
@@ -76,7 +76,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "This is a-a giant station.",
                 "There are many stations like this spread across the galaxy that share information with eachother.",
@@ -95,7 +95,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "I-uh.",
                 "Actually got a degree in Astrological Charting from here.",
@@ -112,7 +112,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "A-alright."
             ],

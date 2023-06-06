@@ -56,7 +56,7 @@ class Intro1 extends GameScene{
     constructor(){ super('intro1', "home") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2 + 100, 'intro1bg');
         this.bg.setOrigin(.5);
@@ -92,7 +92,7 @@ class Intro2 extends GameScene{
     constructor(){ super('intro2', "grocery store") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'intro2bg');
         this.bg.setOrigin(.5);
@@ -110,7 +110,7 @@ class Intro3 extends GameScene{
 
     afterCreate(){
         //bg
-        this.debug = true;
+        //this.debug = true;
         this.bg = this.add.image(1 * this.width / 9 - 200, 1 * this.height / 10 - 500, 'intro3bg');
         this.bg.setOrigin(.5);
         this.bg.scale = 3;
@@ -130,7 +130,7 @@ class Interrogation1 extends GameScene{
     constructor(){ super('interro1', "medbay") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         if(this.debug) this.goToScene("interro2")
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
@@ -167,7 +167,7 @@ class Interrogation2 extends GameScene{
     constructor(){ super('interro2', "brig") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         if(this.debug) this.goToScene('interro3');
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro2bg');
@@ -204,7 +204,7 @@ class Interrogation3 extends GameScene{
     constructor(){ super('interro3', "bridge") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         if(this.debug) this.goToScene('hub');
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro3bg');
@@ -231,7 +231,7 @@ class Sagittarius extends GameScene{
     constructor(){ super('hub', "sagittarius hub") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         if(this.debug) this.goToScene('argus')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'hubbg');
@@ -305,7 +305,7 @@ class Argus extends GameScene{
     constructor(){ super('argus', "internal astronomy location") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
         if(this.debug) this.goToScene('dianmu')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'argusbg');
@@ -318,6 +318,7 @@ class Argus extends GameScene{
         door.render.setDepth(1);
         door.scale = 4;
         door.render.scale = 4;
+        if(this.hasFlag("argus head met")) door.destroy();
 
         if(!this.hasFlag('argus visited')) this.startDialogue('intro1', () => {});
 
@@ -357,7 +358,8 @@ class Dianmu extends GameScene{
     constructor(){ super('dianmu', "it location") };
 
     afterCreate(){
-        this.debug = true;
+        //this.debug = true;
+        if(this.debug) this.goToScene('ikeithea')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'dianmubg');
         this.bg.setOrigin(.5);
@@ -369,6 +371,7 @@ class Dianmu extends GameScene{
         door.render.setDepth(1);
         door.scale = 4;
         door.render.scale = 4;
+        if(this.hasFlag("dianmu head met")) door.destroy();
 
         if(!this.hasFlag("dianmu visited")){
                 this.startDialogue('intro1', () => {})
@@ -428,10 +431,34 @@ class Ikeithea extends GameScene{
     constructor(){ super('ikeithea', "preftl planet") };
 
     afterCreate(){
+        //this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'ikeitheabg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let door = new storyObject(this, 'ikeadoor', 0, this.h2 - 20, false, false, false, true);
+        door.setOrigin(0, .5);
+        door.render.setOrigin(0, .5)
+        door.setDoor('ikeitheaoffice', [], ["ikeithea head met"], [], []);
+        door.setDepth(2);
+        door.render.setDepth(1);
+        door.scale = 4;
+        door.render.scale = 4;
+        if(this.hasFlag("ikeithea head met")) door.destroy();
+
+        if(!this.hasFlag("ikeithea head met")){
+            this.startDialogue('intro1', () => {
+                let jimmy = new storyObject(this, 'jimmy', 1600, 160, false, true, false, false);
+                jimmy.addDialogue([], [], [], [], "jimmy1");
+                jimmy.angle = 10;
+                jimmy.render.angle = 10
+            })
+        }else{
+            let crowd = new storyObject(this, 'crowd', 835, 445, false, true, false, true);
+            crowd.addDialogue([], [], [], [], 'crowd1');
+            crowd.setDoor('outro')
+        }
     }
 
     sceneTransition(){
@@ -449,6 +476,8 @@ class IkeitheaOffice extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'ikeitheaofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('intro1', () => {this.goToScene('ikeithea')})
     }
 
     sceneTransition(){
@@ -606,6 +635,21 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
+        this.load.spritesheet('bhaizen', `${spPath}/BhaizenSpritesheet.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
+        this.load.spritesheet('rapal', `${spPath}/RapalSpritesheets.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
+        this.load.spritesheet('veeqi', `${spPath}/VeeqiSpritesheets.png`,{
+            frameWidth: 120,
+            frameHeight: 160,
+        });
+
         this.load.spritesheet('door', `${spPath}/door.png`,{
             frameWidth: 229,
             frameHeight: 381,
@@ -624,6 +668,16 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('dianmudoor', `${spPath}/dianmudoor82x115.png`,{
             frameWidth: 82,
             frameHeight: 115
+        });
+
+        this.load.spritesheet('ikeadoor', `${spPath}/ikeadoor134x205.png`,{
+            frameWidth: 134,
+            frameHeight: 205
+        });
+
+        this.load.spritesheet('crowd', `${spPath}/crowd198x147.png`,{
+            frameWidth: 198,
+            frameHeight: 147
         });
     }
 }
