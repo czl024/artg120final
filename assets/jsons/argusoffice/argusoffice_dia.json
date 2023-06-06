@@ -1,32 +1,19 @@
 {
     "dialogue": {
         "intro": {
-            "flags": [],
+            "flags": ["argus head met"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "",
             "animation": "",
             "text": [
-                "A short lift ride and a hallway later and you reach the office of the department head."
-            ],
-            "links": [],
-            "linktext": {},
-            "quietLink": ""
-        },
-        "bhaizen1": {
-            "flags": [],
-            "items": [],
-            "itemsRemoved": [],
-            "sprite": "",
-            "nameplate": "",
-            "animation": "",
-            "text": [
+                "A short lift ride and a hallway later and you reach the office of the department head.",
                 "Before you knock, the door opens, a figure is sitting behind a desk."
             ],
             "links": [],
             "linktext": {},
-            "quietLink": ""
+            "quietLink": "bhaizen2"
         },
         "bhaizen2": {
             "flags": [],

@@ -341,6 +341,8 @@ class ArgusOffice extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'argusofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('intro', () => {this.goToScene('dianmu')})
     }
 
     sceneTransition(){
@@ -358,6 +360,15 @@ class Dianmu extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'dianmubg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let door = new storyObject(this, 'dianmudoor', this.w2, this.h2, false, false, false, true);
+
+        this.startDialogue('', () => {
+            
+        })
+
+        let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
+        jimmy.addDialogue([], [], [], [], '');
     }
 
     sceneTransition(){
@@ -375,6 +386,8 @@ class DianmuOffice extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'dianmuofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        this.startDialogue('', () => {});
     }
 
     sceneTransition(){
@@ -579,6 +592,11 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('argusdoor', `${spPath}/argusdoor73x109.png`,{
             frameWidth: 73,
             frameHeight: 109
+        });
+
+        this.load.spritesheet('dianmudoor', `${spPath}/dianmudoor82x115.png`,{
+            frameWidth: 82,
+            frameHeight: 115
         });
     }
 }
