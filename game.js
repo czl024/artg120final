@@ -773,7 +773,7 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
-        this.load.spritesheet('rapal', `${spPath}/RapalSpritesheets.png`,{
+        this.load.spritesheet('rapal', `${spPath}/RapalSpritesheet.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
