@@ -7,6 +7,10 @@
         "ikeadoor": {
             "text": "An office building.",
             "longtext": "Thaliak is begging, pleading for you to get your ass over there."
+        },
+        "crowd": {
+            "text": "A crowd of people.",
+            "longtext": "They love you, maybe a little too much."
         }
     }
 }
