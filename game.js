@@ -776,7 +776,7 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
-        this.load.spritesheet('bhaizen', `${spPath}/BhaizenSpritesheet.png`,{
+        this.load.spritesheet('bhaizen', `${spPath}/BhiazenSpritesheets.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
