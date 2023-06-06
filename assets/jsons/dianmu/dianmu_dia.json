@@ -1,12 +1,14 @@
 {
     "dialogue": {
         "intro1": {
-            "flags": ["dianmu visited"],
+            "flags": [
+                "dianmu visited"
+            ],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "",
-            "animation": "neutral",
+            "animation": "",
             "text": [
                 "The Thaliak feels like a portal to wherever you need to be at this point.",
                 "Dianmu is blindingly snowy, though the hub seems to be shockingly warm.",
@@ -23,7 +25,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "Thaliak",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Welcome to Dianmu, the Information Technology planet.",
                 "If you're wondering how they keep it so warm in this particular area…",
@@ -41,12 +43,22 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "What can I do for y-you?"
             ],
-            "links": ["jimmy2a", "jimmy2b", "jimmy2c", "jimmy2d"],
-            "linktext": {"jimmy2a": "Where do we go?", "jimmy2b": "What is this place?", "jimmy2c": "Have you been here before?", "jimmy2d": "I'm good for now."},
+            "links": [
+                "jimmy2a",
+                "jimmy2b",
+                "jimmy2c",
+                "jimmy2d"
+            ],
+            "linktext": {
+                "jimmy2a": "Where do we go?",
+                "jimmy2b": "What is this place?",
+                "jimmy2c": "Have you been here before?",
+                "jimmy2d": "I'm good for now."
+            },
             "quietLink": ""
         },
         "jimmy2a": {
@@ -55,7 +67,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "The s-secretary actually is waiting inside.",
                 "Apparently, the department head is currently busy elsewhere."
@@ -70,7 +82,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Thaliak explained most everything there is to explain about this planet.",
                 "Y-you may think that under the snow is a landscape.",
@@ -88,7 +100,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "E-everyone comes here at some point.",
                 "T-this place is like a library.",
@@ -105,7 +117,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "A-alright."
             ],
@@ -119,7 +131,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "So, uh.",
                 "One more planet to go before you have met your necessary acquaintences."
@@ -129,26 +141,36 @@
             "quietLink": "jimmyleave2"
         },
         "jimmyleave2": {
-            "flags": ["dianmu ready to leave"],
+            "flags": [
+                "dianmu ready to leave"
+            ],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Ready to depart?"
             ],
-            "links": ["leave", "stay"],
-            "linktext": {"leave": "Yes.", "stay": "No."},
+            "links": [
+                "leave",
+                "stay"
+            ],
+            "linktext": {
+                "leave": "Yes.",
+                "stay": "No."
+            },
             "quietLink": ""
         },
         "leave": {
-            "flags": ["leaving dianmu"],
+            "flags": [
+                "leaving dianmu"
+            ],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Off we go, then."
             ],
@@ -162,7 +184,7 @@
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "L-let me know when you are good to go."
             ],
