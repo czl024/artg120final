@@ -1,16 +1,208 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro1": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak (the ship) dives straight into the ocean, despite the very obvious presense of land. Before you have an opportunity to completely lose it, Jimmy awkwardly wraps an arm around your shoulder."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro2"
+        },
+        "intro2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Th-this i-is st-standard p-procedure, I-I promise."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro3"
+        },
+        "intro3": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Jimmy quickly lets go once the ship has docked. They seem quite excited to exit the ship with enthusiasm you've not thought possible from them."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro4"
+        },
+        "intro4": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Thaliak",
+            "animation": "",
+            "text": [
+                "Here's the last stop of your tour, Nzambici.",
+                "Now uh, I'm going to do you a favor and bring you to the department head myself.",
+                "Stick to me, now."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro5"
+        },
+        "intro5": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "The amount of people looking and losing their marbles at the sight of you makes it painfully clear why.",
+                "The people are waving at you frantically as though you were some movie star."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro6"
+        },
+        "intro6": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "I do miss Nzambici."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "jimmy1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Hi!"
+            ],
+            "links": [
+                "jimmy2a",
+                "jimmy2b",
+                "jimmy2c",
+                "jimmy2d"
+            ],
+            "linktext": {
+                "jimmy2a": "Why are you so excited?",
+                "jimmy2b": "What is this place?",
+                "jimmy2c": "What have you done here?",
+                "jimmy2d": "Catch you later."
+            },
+            "quietLink": ""
+        },
+        "jimmy2a": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "I just love it here.",
+                "Most of my few friends work and study here.",
+                "Nothing but good memories here"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy2a1"
+        },
+        "jimmy2a1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Jimmy starts daydreaming while looking at a terrifyingly massive eel."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2b": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "This is where Pre-FTL Management is based out of.",
+                "So much biological and sociological research is carried out here.",
+                "I find this place and its creatures so fascinating."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2c": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "I got my degree, made lots of friends, got this internship…",
+                "And a lot more th-that uh…",
+                "You do not need to know."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2d": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Yea!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "crowd1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "The crowd of people are asking for you to sign autographs on…nude photos.",
+                "You tactically but politely decline and \"I have places to be\" through the crowd.",
+                "Jimmy eventually shows up and parts the crowd.",
+                "As soon as they're back onboard the Thaliak, their anxiety and awkwardness returns to normal."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }
