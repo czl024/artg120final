@@ -267,12 +267,12 @@ class SagittariusCafe extends GameScene{
 
 
 
-class SFAB1054 extends GameScene{
-    constructor(){ super('sfab-10-54', "internal astronomy location") };
+class Argus extends GameScene{
+    constructor(){ super('argus', "internal astronomy location") };
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'sfab-10-54bg');
+        this.bg = this.add.image(this.w2, this.h2, 'argusbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -284,12 +284,12 @@ class SFAB1054 extends GameScene{
 
 
 
-class SFAB1054Office extends GameScene{
-    constructor(){ super('sfab-10-54office', "internal astronomy office") };
+class ArgusOffice extends GameScene{
+    constructor(){ super('argusoffice', "internal astronomy office") };
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'sfab-10-54officebg');
+        this.bg = this.add.image(this.w2, this.h2, 'argusofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -335,12 +335,12 @@ class DianmuOffice extends GameScene{
 
 
 
-class Nzambici extends GameScene{
-    constructor(){ super('nzambici', "preftl planet") };
+class Ikeithea extends GameScene{
+    constructor(){ super('ikeithea', "preftl planet") };
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'nzambicibg');
+        this.bg = this.add.image(this.w2, this.h2, 'ikeithea');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -352,12 +352,12 @@ class Nzambici extends GameScene{
 
 
 
-class NzambiciOffice extends GameScene{
-    constructor(){ super('nzambicioffice', "preftl office") };
+class IkeitheaOffice extends GameScene{
+    constructor(){ super('ikeitheaoffice', "preftl office") };
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'nzambiciofficebg');
+        this.bg = this.add.image(this.w2, this.h2, 'ikeithea');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -476,12 +476,12 @@ class Loader extends Phaser.Scene{
         this.load.image('interro3bg', `assets/backgrounds/interrogation3.png`);
         this.load.image('hubbg', `assets/backgrounds/SagittariusGalacticHub`);
         this.load.image('cafebg', `assets/backgrounds/SagittariusCoffeeShop.png`);
-        this.load.image('sfab-10-54bg', `assets/backgrounds/StationOrbitingBrownDwarf.png`);
-        this.load.image('sfab-10-54officebg', `assets/backgrounds/InternalAstronomyOffice.png`);
+        this.load.image('argusbg', `assets/backgrounds/StationOrbitingBrownDwarf.png`);
+        this.load.image('argusofficebg', `assets/backgrounds/InternalAstronomyOffice.png`);
         this.load.image('dianmubg', `assets/backgrounds/FrozenPlanet.png`);
         this.load.image('dianmuofficebg', `assets/backgrounds/InternalAstronomyOffice.png`);
-        this.load.image('nzambicibg', `assets/backgrounds/UnderwaterCity.png`);
-        this.load.image('nzambiciofficebg', `assets/backgrounds/PreLightspeedManagementOffice.png`);
+        this.load.image('ikeitheabg', `assets/backgrounds/UnderwaterCity.png`);
+        this.load.image('ikeitheaofficebg', `assets/backgrounds/PreLightspeedManagementOffice.png`);
 
         //spritesheets for animations
         this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
@@ -534,6 +534,6 @@ const game = new Phaser.Game({
         pixelArt: true
     },
     //every scene needs to be in here, so dont forget
-    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, SFAB1054, SFAB1054Office, Dianmu, DianmuOffice, Nzambici, NzambiciOffice],
+    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, Argus, ArgusOffice, Dianmu, DianmuOffice, Ikeithea, IkeitheaiOffice],
     title: "to be determined",
 });
