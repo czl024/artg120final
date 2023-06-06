@@ -1,8 +1,12 @@
 {
     "mouseover": {
-        "": {
-            "text": "",
-            "longtext": ""
+        "jimmy": {
+            "text": "Jimmy",
+            "longtext": "Genuinely not cold. They wait patiently."
+        },
+        "dianmudoor":{
+            "text": "A door.",
+            "longtext": "A very, very shiny door."
         }
     }
 }

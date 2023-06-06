@@ -1,7 +1,7 @@
 {
     "dialogue": {
         "intro1": {
-            "flags": [],
+            "flags": ["dianmu head met"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
@@ -48,7 +48,7 @@
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
-            "nameplate": "",
+            "nameplate": "Rapal",
             "animation": "",
             "text": [
                 "Fer whatever reason, head don't wanna talk to yah, though knowin' em, probably'd die from boredom from how primitive yas human tech is.",
@@ -77,7 +77,7 @@
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
-            "nameplate": "",
+            "nameplate": "Rapal",
             "animation": "",
             "text": [
                 "Aye, wouldn't be IT without the comfiest gat damn chairs in the galaxy, see?"
@@ -114,7 +114,20 @@
                 "Them folks in the Pre-FTL place wanted us to gives yas some modern tech but, uh",
                 "'parently, some of them'safraida y'all blowin' yerselves up er wutever.",
                 "Even though we's in charge of bringen new civil-eye-zay-shins into the Yew-nyun, fer wutever reason, ",
-                "we'vadda sit'on'r asses about Earth cuz ya humans 'parently got a death wish er summat.",
+                "we'vadda sit'on'r asses about Earth cuz ya humans 'parently got a death wish er summat."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro8.5"
+        },
+        "intro8.5": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Rapal",
+            "animation": "",
+            "text": [
                 "Kestions so far?"
             ],
             "links": [
@@ -143,7 +156,7 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro10"
+            "quietLink": "intro8.5"
         },
         "intro9b": {
             "flags": [],
@@ -157,7 +170,7 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro10"
+            "quietLink": "intro8.5"
         },
         "intro9c": {
             "flags": [],
@@ -171,7 +184,7 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro10"
+            "quietLink": "intro8.5"
         },
         "intro9d": {
             "flags": [],
