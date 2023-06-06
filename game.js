@@ -311,10 +311,19 @@ class Argus extends GameScene{
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
+        let door = new storyObject(this, 'argusdoor', 665, 350, false, false, false, true);
+        door.setDoor('argusoffice', [], ["argus head met"], [], []);
+        door.setDepth(2);
+        door.render.setDepth(1);
+        door.scale = 4;
+        door.render.scale = 4;
+
         if(!this.hasFlag('argus visited')) this.startDialogue('intro1', () => {});
 
-        let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
+        let jimmy = new storyObject(this, 'jimmy', this.w2 - 5, this.h2 - 15, false, true, false, false);
         jimmy.addDialogue([], [], [], [], 'jimmy1');
+        jimmy.angle = -10;
+        jimmy.render.angle = -10;
     }
 
     sceneTransition(){
@@ -565,6 +574,11 @@ class Loader extends Phaser.Scene{
         this.load.spritesheet('hubdoor', `${spPath}/hubdoor205x189.png`,{
             frameWidth: 205,
             frameHeight: 189
+        });
+
+        this.load.spritesheet('argusdoor', `${spPath}/argusdoor73x109.png`,{
+            frameWidth: 73,
+            frameHeight: 109
         });
     }
 }
