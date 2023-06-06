@@ -1,7 +1,7 @@
 {
     "dialogue": {
         "intro1": {
-            "flags": [],
+            "flags": ["argus visited"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
@@ -12,14 +12,14 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro2",
+            "quietLink": "intro2"
         },
         "intro2": {
             "flags": [],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
-            "nameplate": "",
+            "nameplate": "Thaliak",
             "animation": "",
             "text": [
                 "Welcome to SFAB-10-54, better known as Argus.",
@@ -45,13 +45,13 @@
                 "jimmy2a",
                 "jimmy2b",
                 "jimmy2c",
-                ""
+                "jimmy2d"
             ],
             "linktext": {
                 "jimmy2a": "Where do we go?",
                 "jimmy2b": "What is this place?",
                 "jimmy2c": "Have you been here before?",
-                "": "I'm good for now."
+                "jimmy2d": "I'm good for now."
             },
             "quietLink": ""
         },
@@ -105,6 +105,20 @@
             "links": [],
             "linktext": {},
             "quietLink": "jimmy1"
+        },
+        "jimmy2d":{
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "A-alright."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }

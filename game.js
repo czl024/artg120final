@@ -84,10 +84,6 @@ class Intro1 extends GameScene{
         wallet.scale = 2;
         wallet.render.scale = 2;
     }
-
-    sceneTransition(){
-
-    }
 }
 
 
@@ -104,10 +100,6 @@ class Intro2 extends GameScene{
 
         if(this.debug) this.goToScene('intro3');
         else this.startDialogue('int2-1', () => {this.goToScene('intro3')});
-    }
-
-    sceneTransition(){
-        
     }
 }
 
@@ -239,7 +231,8 @@ class Sagittarius extends GameScene{
     constructor(){ super('hub', "sagittarius hub") };
 
     afterCreate(){
-        //this.debug = true;
+        this.debug = true;
+        if(this.debug) this.goToScene('argus')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'hubbg');
         this.bg.setOrigin(.5);
@@ -312,12 +305,16 @@ class Argus extends GameScene{
     constructor(){ super('argus', "internal astronomy location") };
 
     afterCreate(){
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'argusbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        
+        if(!this.hasFlag('argus visited')) this.startDialogue('intro1', () => {});
+
+        let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
+        jimmy.addDialogue([], [], [], [], 'jimmy1');
     }
 
     sceneTransition(){
