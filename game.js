@@ -613,7 +613,7 @@ class Outro extends GameScene{
                                                                         this.add.tween({
                                                                             targets: [theend, endscreen],
                                                                             alpha: {from: 0, to: 1},
-                                                                            duration: 5000
+                                                                            duration: 12000  //ELLEN EDIT - changed this from 5000 to 12000 to give more read time
                                                                         })
                                                                     }
                                                                 })
@@ -662,14 +662,6 @@ class MainMenu extends Phaser.Scene{
         this.bg = this.add.image(this.w2, this.h2, 'titlescreen');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
-
-        //title text
-        this.add.text(this.w2, this.h2 / 2, "Wireless Discordance", {
-            fontFamily: 'bahn',
-            fontSize: 175,
-            color: '#F0F0F0',
-            align: 'center'
-        }).setOrigin(.5)
 
         //start game button
         this.button = this.add.rectangle(this.w2, 3 * (this.height / 4), 300, 75, '0xa73db3');
@@ -771,12 +763,12 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
-        this.load.spritesheet('thaliak', `${spPath}/Thaliak.png`,{
+        this.load.spritesheet('thaliak', `${spPath}/ThaliakSpritesheet.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
 
-        this.load.spritesheet('bhaizen', `${spPath}/BhiazenSpritesheets.png`,{
+        this.load.spritesheet('bhaizen', `${spPath}/BhiazenSpritesheet.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
@@ -786,7 +778,7 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
-        this.load.spritesheet('veeqi', `${spPath}/VeeqiSpritesheets.png`,{
+        this.load.spritesheet('veeqi', `${spPath}/VeeqiSpritesheet.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
