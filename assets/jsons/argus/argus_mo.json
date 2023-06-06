@@ -3,6 +3,10 @@
         "jimmy": {
             "text": "Jimmy",
             "longtext": "They await patiently."
+        },
+        "argusdoor": {
+            "text": "An elevator door.",
+            "longtext": "As interesting as it looks to your human senses, it's still just a door."
         }
     }
 }
