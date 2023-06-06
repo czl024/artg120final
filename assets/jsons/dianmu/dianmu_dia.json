@@ -1,16 +1,133 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro1": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "The Thaliak feels like a portal to wherever you need to be at this point.",
+                "Dianmu is blindingly snowy, though the hub seems to be shockingly warm.",
+                "You want to shiver but just don't feel the need to.",
+                "Jimmy notices your confusion but still offers you a coat that you instinctively but politely reject."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro2"
+        },
+        "intro2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Thaliak",
+            "animation": "",
+            "text": [
+                "Welcome to Dianmu, the Information Technology planet.",
+                "If you're wondering how they keep it so warm in this particular area…",
+                "The planet is so cold that they use the air to cool the servers and other hardware and they funnel the heat generated into the central hub.",
+                "This city is probably the warmest place on the planet.",
+                "Anyways, same deal, I got paperwork, follow Jimmy around."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "jimmy1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "What can I do for y-you?"
+            ],
+            "links": ["jimmy2a", "jimmy2b", "jimmy2c", "jimmy2d"],
+            "linktext": {"jimmy2a": "Where do we go?", "jimmy2b": "What is this place?", "jimmy2c": "Have you been here before?", "jimmy2d": "I'm good for now."},
+            "quietLink": ""
+        },
+        "jimmy2a": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "The s-secretary actually is waiting inside.",
+                "Apparently, the department head is currently busy elsewhere."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2b": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Thaliak explained most everything there is to explain about this planet.",
+                "Y-you may think that under the snow is a landscape.",
+                "It is actually buildings that store data servers.",
+                "Naturally, the only people allowed inside these buildings are the IT people.",
+                "In case you were curious, there are several other planets like this around the galaxy."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2c": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "E-everyone comes here at some point.",
+                "T-this place is like a library.",
+                "Though, uh",
+                "They do send the information around the galaxy, it's required to learn about server hardware in education."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2d": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "A-alright."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "jimmyleave": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "So, uh.",
+                "One more planet to go before you have met your necessary acquaintences.",
+                "Ready to depart?"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }
