@@ -6,7 +6,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Er-Earthen languages are getting more popular.",
                 "They recently added English to the Universal Translator."
@@ -25,7 +25,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "W-what?",
                 "Oh, right.",
@@ -41,7 +41,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "You attempt to make small talk with Jimmy.",
                 "It doesn't work great. They give very brief, factual, cold answers. He's either very much not wanting to talk or is very much not good at socializing.",
@@ -57,7 +57,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "You uh.",
                 "Can talk with the patrons, if you want.",

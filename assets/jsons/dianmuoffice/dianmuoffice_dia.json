@@ -6,7 +6,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "???",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Aye, aintcha one of them humans that's been causin' all the ruckus?"
             ],
@@ -20,7 +20,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "How and why does this universal translator have an accent?",
                 "This certainly isn't a fancy office, or, really an office at all."
@@ -35,7 +35,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "???",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Names’ Rapal, ye probably know that I'm the head's secretary, the body, maybe, heheheheh."
             ],
@@ -49,7 +49,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Fer whatever reason, head don't wanna talk to yah, though knowin' em, probably'd die from boredom from how primitive yas human tech is.",
                 "Ah, right, where're me manners. C'mon 'ave a seat'ere"
@@ -64,7 +64,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Rapal pulls up an exceptionally comfy looking chair."
             ],
@@ -78,7 +78,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Aye, wouldn't be IT without the comfiest gat damn chairs in the galaxy, see?"
             ],
@@ -92,7 +92,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Damn if this wasn't the gat damn comfiest chair in the gat damn galaxy, see?",
                 "Rapal proceeds to do a gat damn backflip into their gat damn chair, landing upside down but still facing you."
@@ -107,7 +107,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "'righty then, bizn's.",
                 "They ain't call us the IT depa'tment fer nut'n.",
@@ -126,7 +126,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Kestions so far?"
             ],
@@ -150,7 +150,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "Naw"
             ],
@@ -164,7 +164,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Eh."
             ],
@@ -178,7 +178,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "We digitaze em."
             ],
@@ -192,7 +192,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Well, see, we ain't gotta do a gat damn thing till them astranumers n pre-FTL folk get them shit together.",
                 "Yer jab's t'get them shit together, see?"
@@ -207,7 +207,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Though, we's got one big prablem, ak'shully.",
                 "Yous human tech's so primitive and folks so reactive, we'd hafta upend yall's civilization jus to get ya to talk to us properly.",
@@ -224,7 +224,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "The hell's a lump of coal worth compared to a lumpa uranium?",
                 "I gat more kestions then answers, see?"
@@ -239,7 +239,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "I mean a'course ye could just use fusion or annihilation amplifiers but yew tell me."
             ],
@@ -253,7 +253,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "It ain't, but if ya say so."
             ],
@@ -267,7 +267,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Rapal frontflips to a stand in front of you."
             ],
@@ -281,7 +281,7 @@
             "itemsRemoved": [],
             "sprite": "rapal",
             "nameplate": "Rapal",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Nah I'm sher yer gon be reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeal tired of them astranumers and pre-FTL folk bick'rin at sum point.",
                 "Lemme tell ya, I'm reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeal gat dam tired of them's shit, so yew come ta me and I'll tell em what fer.",
