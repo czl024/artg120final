@@ -250,9 +250,9 @@ class Sagittarius extends GameScene{
         door.render.setOrigin(1);
         door.scale = 4;
         door.render.scale = 4;
-        door.setDoor('hubcafe');
+        door.setDoor('cafe');
 
-        this.startDialogue("intro1", () => {});
+        //this.startDialogue("intro1", () => {});
         if(this.hasFlag("coffee bought") || this.debug){
             let jimmy = new storyObject(this, 'jimmy', 280, 900, false, true, false, true);
             jimmy.setDepth(2);
@@ -273,13 +273,32 @@ class Sagittarius extends GameScene{
 
 
 class SagittariusCafe extends GameScene{
-    constructor(){ super('hubcafe', "sagittarius coffee shop") };
+    constructor(){ super('cafe', "sagittarius coffee shop") };
 
     afterCreate(){
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'cafebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        if(!this.hasFlag("coffee bought")) {
+            let jimmy = new storyObject(this, 'jimmy', this.w2, this.height / 3, false, true, true, false);
+            jimmy.addDialogue([], [], [], [], 'intro1');
+            jimmy.scale = 1.5;
+            jimmy.render.scale = 1.5;
+        }
+
+        let text = this.add.text(this.width / 3, 4 * this.height / 5, "Return to the hub.", {
+            fontFamily: 'bahn',
+            fontSize: 75,
+		    color: '#F0F0F0',
+		    align: 'center'
+        })
+        text.setOrigin(.5);
+        text.setInteractive();
+        text.on('pointerover', () => { text.alpha = .8 })
+        text.on('pointerout', () => { text.alpha = 1 })
+        text.on('pointerdown', () => { this.goToScene('hub') });
     }
 
     sceneTransition(){
@@ -297,6 +316,8 @@ class Argus extends GameScene{
         this.bg = this.add.image(this.w2, this.h2, 'argusbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        
     }
 
     sceneTransition(){
