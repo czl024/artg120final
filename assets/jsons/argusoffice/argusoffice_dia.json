@@ -21,7 +21,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "???",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "Ah, finally, a human. Do watch your step. I would prefer that you do not break anything important."
             ],
@@ -35,7 +35,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "There is no chair upon which to sit.",
                 "As you get closer, you notice that they are also standing."
@@ -50,7 +50,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "???",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "Bhaizen, Head of Internal Astronomy. If you do not remember this name now, you will soon enough."
             ],
@@ -64,7 +64,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "Now, since you're here, I assume that the Chief Earth Radio Investigator has informed you of the issues plaguing my department."
             ],
@@ -78,7 +78,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "Straight to the point, Bhaizen glares at you while talking."
             ],
@@ -92,7 +92,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "I'll keep this brief and simple for you.",
                 "Pay attention, for you'll answer to me from hereon.",
@@ -115,7 +115,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "Bhaizen crosses their arms."
             ],
@@ -129,7 +129,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "We've already lost two cargo ships because of Earth-related radio emissions",
                 "If it were up to me, I'dve built a big dome around Earth, but naturally, a lot of people find that immoral.",
@@ -147,7 +147,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "Ah, racism moment incoming."
             ],
@@ -161,7 +161,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "angry",
             "text": [
                 "Why is your civilization continuing to spew radio waves everywhere?"
             ],
@@ -183,7 +183,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "That bad?",
                 "I suppose you can tell me later, then."
@@ -198,7 +198,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "disgust",
             "text": [
                 "For your sake, I'm going to pretend you know."
             ],
@@ -212,7 +212,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "…",
                 "Fair enough."
@@ -227,7 +227,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Bhaizen lets out a big sigh."
             ],
@@ -241,7 +241,7 @@
             "itemsRemoved": [],
             "sprite": "bhaizen",
             "nameplate": "Bhaizen",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Look, I don't want to antagonize all of human civilization.",
                 "It's just difficult when this big of a mess is coming out of it.",
@@ -258,7 +258,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Bhaizen has been much more angry recently…",
                 "W-well",
