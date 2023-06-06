@@ -43,41 +43,15 @@
             "nameplate": "",
             "animation": "",
             "text": [
-                "You attempt to make small talk with Jimmy."
+                "You attempt to make small talk with Jimmy.",
+                "It doesn't work great. They give very brief, factual, cold answers. He's either very much not wanting to talk or is very much not good at socializing.",
+                "Some people take a second to look at you. Some take a little longer than a second. Some wave at you, or at least, what you interpret as waving."
             ],
             "links": [],
             "linktext": {},
             "quietLink": "intro4"
         },
         "intro4": {
-            "flags": [],
-            "items": [],
-            "itemsRemoved": [],
-            "sprite": "",
-            "nameplate": "",
-            "animation": "",
-            "text": [
-                "It doesn't work great. They give very brief, factual, cold answers. He's either very much not wanting to talk or is very much not good at socializing."
-            ],
-            "links": [],
-            "linktext": {},
-            "quietLink": "intro5"
-        },
-        "intro5": {
-            "flags": [],
-            "items": [],
-            "itemsRemoved": [],
-            "sprite": "",
-            "nameplate": "",
-            "animation": "",
-            "text": [
-                "Some people take a second to look at you. Some take a little longer than a second. Some wave at you, or at least, what you interpret as waving."
-            ],
-            "links": [],
-            "linktext": {},
-            "quietLink": "intro6"
-        },
-        "intro6": {
             "flags": [],
             "items": [],
             "itemsRemoved": [],
@@ -91,9 +65,9 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro7"
+            "quietLink": "intro5"
         },
-        "intro7": {
+        "intro5": {
             "flags": [],
             "items": [],
             "itemsRemoved": [],
@@ -105,9 +79,9 @@
             ],
             "links": [],
             "linktext": {},
-            "quietLink": "intro8"
+            "quietLink": "leave"
         },
-        "intro8": {
+        "leave": {
             "flags": [],
             "items": [],
             "itemsRemoved": [],

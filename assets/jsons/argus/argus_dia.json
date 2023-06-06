@@ -1,16 +1,110 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro1": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "The International Space Station is but a tiny toy compared to this thing."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro2",
+        },
+        "intro2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Welcome to SFAB-10-54, better known as Argus.",
+                "Now here's where the Department of Internal Astronomy is based. It's quite close to Earth, actually, which is unfortunately why they're quite annoyed at it.",
+                "I will need to handle some documentation and whatnot. I have already let them know you're here, so Jimmy will guide you there.",
+                "The head of the department will talk to you about what you're going to be doing in the future, so direct any questions to them."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "jimmy1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "H-how can I help?"
+            ],
+            "links": [
+                "jimmy2a",
+                "jimmy2b",
+                "jimmy2c",
+                ""
+            ],
+            "linktext": {
+                "jimmy2a": "Where do we go?",
+                "jimmy2b": "What is this place?",
+                "jimmy2c": "Have you been here before?",
+                "": "I'm good for now."
+            },
+            "quietLink": ""
+        },
+        "jimmy2a": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Th-there is a lift that will lead you to the offices.",
+                "I will escord you to the head office once we reach that floor."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2b": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "This is a-a giant station.",
+                "There are many stations like this spread across the galaxy that share information with eachother.",
+                "Th-though this one's much bigger.",
+                "Th-there is probably thousands of astronomers who reside and work here.",
+                "Th-the department is the first to notice when something goes awry.",
+                "You can probably imagine why people are quite worried about Earth, th-then."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
+        },
+        "jimmy2c": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "I-uh.",
+                "Actually got a degree in Astrological Charting from here.",
+                "Y-you know.",
+                "Just in case we ever reach Andromeda."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmy1"
         }
     }
 }
