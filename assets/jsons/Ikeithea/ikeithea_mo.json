@@ -1,8 +1,12 @@
 {
     "mouseover": {
-        "": {
-            "text": "",
-            "longtext": ""
+        "jimmy": {
+            "text": "Jimmy",
+            "longtext": "Weirdly happy and excited. Almost a totally different person."
+        },
+        "ikeadoor": {
+            "text": "An office building.",
+            "longtext": "Thaliak is begging, pleading for you to get your ass over there."
         }
     }
 }
