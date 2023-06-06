@@ -1,16 +1,433 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro1": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak practically smuggles you into the office.",
+                "Every room you enter erupts in jubilation to your presense."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro2"
+        },
+        "intro2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "???",
+            "animation": "",
+            "text": [
+                "THALIAK, OH I'VE BEEN WAITING SO LONG!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro3"
+        },
+        "intro3": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "The voice squeals as soon as the eyes belonging to the voice lock to you.",
+                "The chair they were sitting in practically flies backward."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro4"
+        },
+        "intro4": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "???",
+            "animation": "",
+            "text": [
+                "AAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!!!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro5"
+        },
+        "intro5": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Thaliak",
+            "animation": "",
+            "text": [
+                "Please stop screaming into the ambassador's face."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro6"
+        },
+        "intro6": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "???",
+            "animation": "",
+            "text": [
+                "I am Veeqi, Head of Pre-Lightspeed Civilization Management. I have DYING to meet a human!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro7"
+        },
+        "intro7": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Come now dear, don’t be shy. Please, have a seat."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro8"
+        },
+        "intro8": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "After regaining your senses, you reach for a frankly massive chair, though you suppose it's quite average-sized for a towering behemoth like Veeqi."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro9"
+        },
+        "intro9": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "No no no, my lap is far more comfortable!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro10"
+        },
+        "intro10": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak shoots a glare at her that could probably shoot lasers if it was any more intense.",
+                "Veeqi begrudingly slams a chair in front of her desk.",
+                "She does lift you onto the chair, though."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro11"
+        },
+        "intro11": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Oh, fine.",
+                "O, THALIAK, WOE IS I THOU HAST TO TEMPER ME SO~!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro12"
+        },
+        "intro12": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak just crosses his arms impatiently.",
+                "Veeqi clears their throat, which rumbles the air of the office."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro13"
+        },
+        "intro13": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Right, after doing study on your race for 400 Earth years and getting a degree, I simply can not think about anything else.",
+                "Ooh, that's probably such a long time for you!",
+                "So adorable, like how you procreate!",
+                "See, my favorite is when–"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro14"
+        },
+        "intro14": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak shoots Veeqi with their invisible eye lasers again."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro15"
+        },
+        "intro15": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Just let me gush about humans some more~!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro16"
+        },
+        "intro16": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak's eye beams are reaching maximum power."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro17"
+        },
+        "intro17": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Fiiiine~",
+                "So, business!",
+                "I've been told you've already met with the Astronomy Department?",
+                "Yes, I know, sweetie, they're so mean.",
+                "I've been begging, imploring the Central Council to integrate humanity into the Union but everyone says humans are too dangerous!",
+                "See, I think there are simply too many cute humies for that to even be possible~!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro18"
+        },
+        "intro18": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "You are unsure about everything.",
+                "You pinch yourself, hard.",
+                "Ouch."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "intro19": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "I've even led projects to directly steer humanity towards integration, but so many things went different than models predicted we had to stop.",
+                "You lot are simply too individual and unpredictable!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro20"
+        },
+        "intro20": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Now're you're VERY unsure about EVERYTHING."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro21"
+        },
+        "intro21": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "And now the astronomy folk are grumpy because you like playing with radios!",
+                "I, personally, think, there's something about humans that we don't understand.",
+                "I believe with just the right nudge, humanity can be productive members of the Union!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro22"
+        },
+        "intro22": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Veeqi seems to be on the verge of starting a very long speech that you kinda wanna hear but know Thaliak would rather punch a giant hole in the wall that leads directly outside.",
+                "What do you say to stop Veeqi?"
+            ],
+            "links": [
+                "intro23a",
+                "intro23b",
+                "intro23c"
+            ],
+            "linktext": {
+                "intro23a": "Veeqi, my job, what is it?",
+                "intro23b": "Look, I have things to do.",
+                "intro23c": "Please stop."
+            },
+            "quietLink": ""
+        },
+        "intro23a": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Wuh?",
+                "Your job?",
+                "O-oh, right."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro24"
+        },
+        "intro23b": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "Huh!?",
+                "I suppose you only live 80 years after all…"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro24"
+        },
+        "intro23c": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "N-nooo~!!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro24"
+        },
+        "intro24": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Veeqi",
+            "animation": "",
+            "text": [
+                "So~!",
+                "You will assist me and my department in making humanity more suitable for integration into the Union and that means we can give you fancy new toys to play with!",
+                "Which also means no more radio waves which means the Astronomy Department can stop complaining!"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "intro25"
+        },
+        "intro25": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Thaliak desperately motions for you to jump off the chair to end this meeting.",
+                "Veeqi, desperate to keep you and/or your attention, starts talking about giving tours of the planet and the galaxy and whatever else."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "end": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Before you know it, Thaliak is almost dragging you in a full sprint towards the Thaliak.",
+                "They are met by a wall of people equally as tall as Veeqi, and equally wanting to probably squeeze you to death.",
+                "They IMPLORE Thaliak to let you to them.",
+                "Unfortunately for you, he just wants to get out of here, and lets you fend for yourself."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }
