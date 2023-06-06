@@ -4,7 +4,7 @@
             "flags": [],
             "items": [],
             "itemsRemoved": [],
-            "sprite": "",
+            "sprite": "jimmy",
             "nameplate": "Jimmy",
             "animation": "",
             "text": [
@@ -23,7 +23,7 @@
             "flags": [],
             "items": [],
             "itemsRemoved": [],
-            "sprite": "",
+            "sprite": "jimmy",
             "nameplate": "Jimmy",
             "animation": "",
             "text": [
@@ -39,7 +39,7 @@
             "flags": [],
             "items": [],
             "itemsRemoved": [],
-            "sprite": "",
+            "sprite": "jimmy",
             "nameplate": "",
             "animation": "",
             "text": [
@@ -55,7 +55,7 @@
             "flags": [],
             "items": [],
             "itemsRemoved": [],
-            "sprite": "",
+            "sprite": "jimmy",
             "nameplate": "Jimmy",
             "animation": "",
             "text": [
@@ -81,7 +81,7 @@
             "linktext": {},
             "quietLink": "leave"
         },
-        "intro8": {
+        "leave": {
             "flags": ["coffee bought"],
             "items": [],
             "itemsRemoved": [],
