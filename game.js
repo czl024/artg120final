@@ -84,10 +84,6 @@ class Intro1 extends GameScene{
         wallet.scale = 2;
         wallet.render.scale = 2;
     }
-
-    sceneTransition(){
-
-    }
 }
 
 
@@ -104,10 +100,6 @@ class Intro2 extends GameScene{
 
         if(this.debug) this.goToScene('intro3');
         else this.startDialogue('int2-1', () => {this.goToScene('intro3')});
-    }
-
-    sceneTransition(){
-        
     }
 }
 
@@ -212,6 +204,8 @@ class Interrogation3 extends GameScene{
     constructor(){ super('interro3', "bridge") };
 
     afterCreate(){
+        this.debug = true;
+        if(this.debug) this.goToScene('hub');
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro3bg');
         this.bg.setOrigin(.5);
@@ -237,10 +231,31 @@ class Sagittarius extends GameScene{
     constructor(){ super('hub', "sagittarius hub") };
 
     afterCreate(){
+        this.debug = true;
+        if(this.debug) this.goToScene('argus')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'hubbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        let door = new storyObject(this, 'hubdoor', this.width, this.height, false, false, false, true);
+        door.setOrigin(1)
+        door.render.setOrigin(1);
+        door.scale = 4;
+        door.render.scale = 4;
+        door.setDoor('cafe');
+
+        //this.startDialogue("intro1", () => {});
+        if(this.hasFlag("coffee bought") || this.debug){
+            let jimmy = new storyObject(this, 'jimmy', 280, 900, false, true, false, true);
+            jimmy.setDepth(2);
+            jimmy.render.setDepth(1);
+            jimmy.scale = 2.5;
+            jimmy.render.scale = 2.5;
+            jimmy.addDialogue(["ready to leave"], [], [], [], 'leaveconfirmation');
+            jimmy.addDialogue([], [], [], [], 'leave1');
+            jimmy.setDoor('argus', ["leaving"], [], [], []);
+        }
     }
 
     sceneTransition(){
@@ -251,13 +266,32 @@ class Sagittarius extends GameScene{
 
 
 class SagittariusCafe extends GameScene{
-    constructor(){ super('hubcafe', "sagittarius coffee shop") };
+    constructor(){ super('cafe', "sagittarius coffee shop") };
 
     afterCreate(){
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'cafebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        if(!this.hasFlag("coffee bought")) {
+            let jimmy = new storyObject(this, 'jimmy', this.w2, this.height / 3, false, true, true, false);
+            jimmy.addDialogue([], [], [], [], 'intro1');
+            jimmy.scale = 1.5;
+            jimmy.render.scale = 1.5;
+        }
+
+        let text = this.add.text(this.width / 3, 4 * this.height / 5, "Return to the hub.", {
+            fontFamily: 'bahn',
+            fontSize: 75,
+		    color: '#F0F0F0',
+		    align: 'center'
+        })
+        text.setOrigin(.5);
+        text.setInteractive();
+        text.on('pointerover', () => { text.alpha = .8 })
+        text.on('pointerout', () => { text.alpha = 1 })
+        text.on('pointerdown', () => { this.goToScene('hub') });
     }
 
     sceneTransition(){
@@ -271,10 +305,16 @@ class Argus extends GameScene{
     constructor(){ super('argus', "internal astronomy location") };
 
     afterCreate(){
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'argusbg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
+
+        if(!this.hasFlag('argus visited')) this.startDialogue('intro1', () => {});
+
+        let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
+        jimmy.addDialogue([], [], [], [], 'jimmy1');
     }
 
     sceneTransition(){
@@ -465,59 +505,66 @@ class Loader extends Phaser.Scene{
             this.scene.start('mainmenu');
         })
 
+        let bgPath = "assets/backgrounds"
+        let spPath = "assets/spritesheets"
         //basic images
-        this.load.image('menu', `assets/spritesheets/menutab.png`);
-        this.load.image('mmbg', `assets/backgrounds/TitleScreen.png`);
-        this.load.image('intro1bg', `assets/backgrounds/intro1.png`);
-        this.load.image('intro2bg', `assets/backgrounds/intro2.png`);
-        this.load.image('intro3bg', `assets/backgrounds/intro3.png`);
-        this.load.image('interro1bg', `assets/backgrounds/interrogation1.png`);
-        this.load.image('interro2bg', `assets/backgrounds/interrogation2.png`);
-        this.load.image('interro3bg', `assets/backgrounds/interrogation3.png`);
-        this.load.image('hubbg', `assets/backgrounds/SagittariusGalacticHub`);
-        this.load.image('cafebg', `assets/backgrounds/SagittariusCoffeeShop.png`);
-        this.load.image('argusbg', `assets/backgrounds/StationOrbitingBrownDwarf.png`);
-        this.load.image('argusofficebg', `assets/backgrounds/InternalAstronomyOffice.png`);
-        this.load.image('dianmubg', `assets/backgrounds/FrozenPlanet.png`);
-        this.load.image('dianmuofficebg', `assets/backgrounds/InternalAstronomyOffice.png`);
-        this.load.image('ikeitheabg', `assets/backgrounds/UnderwaterCity.png`);
-        this.load.image('ikeitheaofficebg', `assets/backgrounds/PreLightspeedManagementOffice.png`);
+        this.load.image('menu', `${spPath}/menutab.png`);
+        this.load.image('mmbg', `${bgPath}/TitleScreen.png`);
+        this.load.image('intro1bg', `${bgPath}/intro1.png`);
+        this.load.image('intro2bg', `${bgPath}/intro2.png`);
+        this.load.image('intro3bg', `${bgPath}/intro3.png`);
+        this.load.image('interro1bg', `${bgPath}/interrogation1.png`);
+        this.load.image('interro2bg', `${bgPath}/interrogation2.png`);
+        this.load.image('interro3bg', `${bgPath}/interrogation3.png`);
+        this.load.image('hubbg', `${bgPath}/SagittariusGalacticHub.png`);
+        this.load.image('cafebg', `${bgPath}/SagittariusCoffeeShop.png`);
+        this.load.image('argusbg', `${bgPath}/StationOrbitingBrownDwarf.png`);
+        this.load.image('argusofficebg', `${bgPath}/InternalAstronomyOffice.png`);
+        this.load.image('dianmubg', `${bgPath}/FrozenPlanet.png`);
+        this.load.image('dianmuofficebg', `${bgPath}/InternalAstronomyOffice.png`);
+        this.load.image('ikeitheabg', `${bgPath}/UnderwaterCity.png`);
+        this.load.image('ikeitheaofficebg', `${bgPath}/PreLightspeedManagementOffice.png`);
 
         //spritesheets for animations
-        this.load.spritesheet('orb', `assets/spritesheets/orb.png`,{
+        this.load.spritesheet('orb', `${spPath}/orb.png`,{
             frameWidth: 368,
             frameHeight: 360,
             endFrame: 1
         });
 
-        this.load.spritesheet('chikn', "assets/spritesheets/chikn.jpg",{
+        this.load.spritesheet('chikn', `${spPath}/chikn.jpg`,{
             frameWidth: 1243,
             frameHeight: 1280,
         });
 
-        this.load.spritesheet('blount', "assets/spritesheets/420.jpg",{
+        this.load.spritesheet('blount', `${spPath}/420.jpg`,{
             frameWidth: 1024,
             frameHeight: 1280,
         });
 
-        this.load.spritesheet('Wallet', "assets/spritesheets/Wallet.png",{
+        this.load.spritesheet('Wallet', `${spPath}/Wallet.png`,{
             frameWidth: 50,
             frameHeight: 50,
         });
 
-        this.load.spritesheet('jimmy', "assets/spritesheets/JimmySpritesheet.png",{
+        this.load.spritesheet('jimmy', `${spPath}/JimmySpritesheet.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
 
-        this.load.spritesheet('thaliak', "assets/spritesheets/Thaliak.png",{
+        this.load.spritesheet('thaliak', `${spPath}/Thaliak.png`,{
             frameWidth: 120,
             frameHeight: 160,
         });
 
-        this.load.spritesheet('door', "assets/spritesheets/door.png",{
+        this.load.spritesheet('door', `${spPath}/door.png`,{
             frameWidth: 229,
             frameHeight: 381,
+        });
+
+        this.load.spritesheet('hubdoor', `${spPath}/hubdoor205x189.png`,{
+            frameWidth: 205,
+            frameHeight: 189
         });
     }
 }
@@ -534,6 +581,6 @@ const game = new Phaser.Game({
         pixelArt: true
     },
     //every scene needs to be in here, so dont forget
-    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, Argus, ArgusOffice, Dianmu, DianmuOffice, Ikeithea, IkeitheaiOffice],
+    scene: [Loader, GameMenu, MainMenu, Test, Test2, Intro1, Intro2, Intro3, Interrogation1, Interrogation2, Interrogation3, Sagittarius, SagittariusCafe, Argus, ArgusOffice, Dianmu, DianmuOffice, Ikeithea, IkeitheaOffice],
     title: "to be determined",
 });

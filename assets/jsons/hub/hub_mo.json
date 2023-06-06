@@ -1,8 +1,12 @@
 {
     "mouseover": {
-        "": {
-            "text": "",
-            "longtext": ""
+        "jimmy": {
+            "text": "Jimmy",
+            "longtext": "They're holding a brown bag and a shiny cupholder with several cups."
+        },
+        "hubdoor": {
+            "text": "A coffee shop.",
+            "longtext": "Resembles one of them shops back home."
         }
     }
 }

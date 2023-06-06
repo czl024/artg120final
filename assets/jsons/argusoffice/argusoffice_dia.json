@@ -1,16 +1,287 @@
 {
     "dialogue": {
-        "":{
-            "flags":        [],
-            "items":        [],
+        "intro": {
+            "flags": [],
+            "items": [],
             "itemsRemoved": [],
-            "sprite":       "",
-            "nameplate":    "",
-            "animation":    "",
-            "text":         [],
-            "links":        [],
-            "linktext":     {},
-            "quietLink":    "",
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "A short lift ride and a hallway later and you reach the office of the department head."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "bhaizen1": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Before you knock, the door opens, a figure is sitting behind a desk."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "bhaizen2": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "???",
+            "animation": "",
+            "text": [
+                "Ah, finally, a human. Do watch your step. I would prefer that you do not break anything important."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen3"
+        },
+        "bhaizen3": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "There is no chair upon which to sit.",
+                "As you get closer, you notice that they are also standing."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen4"
+        },
+        "bhaizen4": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "???",
+            "animation": "",
+            "text": [
+                "Bhaizen, Head of Internal Astronomy. If you do not remember this name now, you will soon enough."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen5"
+        },
+        "bhaizen5": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "Now, since you're here, I assume that the Chief Earth Radio Investigator has informed you of the issues plaguing my department."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen6"
+        },
+        "bhaizen6": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Straight to the point, Bhaizen glares at you while talking."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen7"
+        },
+        "bhaizen7": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "I'll keep this brief and simple for you.",
+                "Pay attention, for you'll answer to me from hereon.",
+                "Just because you aren't under my jurisdiction does not mean you can ignore the demands of this department.",
+                "Earth has been emitting radio waves several orders of magnitude more than all Union planets. This makes it absolutely impossible to monitor anything near Earth. Unfortunately, this station is near Earth.",
+                "Because of this unfortunate coincidence, this station will eventually be nothing more than a glorified office complex if nothing is done.",
+                "You may think, why does such an advanced civilization need radio waves?",
+                "Well, if you've taken elementary physics, you will know that every object emits radiation. Most of it falls under what human physics defines between \"radio\" and \"ultraviolet\"",
+                "Many dark, cold objects, you know, the most dangerous ones, emit only radio waves.",
+                "To spell it out, we cannot see flying meteors and comets that endanger planets and ships around a 100 lightyear radius around Earth.",
+                "Short-range communication is also borderline impossible near Earth, not without obsolete technology that simply cannot do in any other situation."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen8"
+        },
+        "bhaizen8": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Bhaizen crosses their arms."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen9"
+        },
+        "bhaizen9": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "We've already lost two cargo ships because of Earth-related radio emissions",
+                "If it were up to me, I'dve built a big dome around Earth, but naturally, a lot of people find that immoral.",
+                "Speaking of whom, the Pre-Lightspeed Civilization Management has been the reason this problem has yet to be addressed. If they will listen to anyone, they'd listen to someone who came from the damn planet itself.",
+                "So, to put it simply, my job for you, is to fix this problem before the Earth-radio bubble engulfs the station in 2 centuries.",
+                "So, human"
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen10"
+        },
+        "bhaizen10": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Ah, racism moment incoming."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen11"
+        },
+        "bhaizen11": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "Why is your civilization continuing to spew radio waves everywhere?"
+            ],
+            "links": [
+                "bhaizen12a",
+                "bhaizen12b",
+                "bhaizen12c"
+            ],
+            "linktext": {
+                "bhaizen12a": "How much time do you have?",
+                "bhaizen12b": "Uh, well…",
+                "bhaizen12c": "You ask as though we do it maliciously."
+            },
+            "quietLink": ""
+        },
+        "bhaizen12a": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "That bad?",
+                "I suppose you can tell me later, then."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "bhaizen12b": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "For your sake, I'm going to pretend you know."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "bhaizen12c": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "…",
+                "Fair enough."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizen13"
+        },
+        "bhaizen13": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "",
+            "animation": "",
+            "text": [
+                "Bhaizen lets out a big sigh."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "bhaizenend"
+        },
+        "bhaizenend": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Bhaizen",
+            "animation": "",
+            "text": [
+                "Look, I don't want to antagonize all of human civilization.",
+                "It's just difficult when this big of a mess is coming out of it.",
+                "We will have to discuss matters soon.",
+                "I will be sure to schedule a meeting with you soon. Do not miss it."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "jimmyexit": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Bhaizen has been much more angry recently…",
+                "W-well",
+                "I do not think we need to be here any longer.",
+                "Thaliak is done with their business here as well.",
+                "We will head immediately to Dianmu."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
         }
     }
 }
