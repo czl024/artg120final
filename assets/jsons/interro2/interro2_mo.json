@@ -4,7 +4,7 @@
             "text": "Thaliak",
             "longtext": "You don't really know their last name, or whatever, or if they even have such things."
         },
-        "door": {
+        "i2door": {
             "text": "A door.",
             "longtext": "Considerably bigger and stronger than before. You can tell because it opens and closes slower and louder."
         }

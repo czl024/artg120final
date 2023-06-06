@@ -131,7 +131,7 @@ class Interrogation1 extends GameScene{
 
     afterCreate(){
         //this.debug = true;
-        if(this.debug) this.goToScene("interro2")
+        //if(this.debug) this.goToScene("interro2")
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'interro1bg');
         this.bg.setOrigin(.5);
@@ -141,11 +141,15 @@ class Interrogation1 extends GameScene{
 
         this.startDialogue('intro1', () => {
             overlay.destroy();
-            let jimmy = new storyObject(this, 'jimmy', 1120, 530, false, true, true, false);
+            let jimmy = new storyObject(this, 'jimmy', 990, 265, false, true, true, false);
             jimmy.scale = 2.5;
             jimmy.render.scale = 2.5;
             jimmy.addDialogue([], [], [], [], '1');
-            let door = new storyObject(this, 'door', 1750, 280, false, false, false, true);
+            let door = new storyObject(this, 'i1door', this.width, 0, false, false, false, true);
+            door.setOrigin(1, 0);
+            door.render.setOrigin(1, 0);
+            door.scale = 4;
+            door.render.scale = 4
             door.setDoor('interro2', ["talked to jimmy"], [], [], []);
             door.on('pointerover', () => {
                 door.playAnim('open');
@@ -174,14 +178,18 @@ class Interrogation2 extends GameScene{
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        let thaliak = new storyObject(this, 'thaliak', this.w2, this.h2 + 80, false, true, true, false);
+        let thaliak = new storyObject(this, 'thaliak', this.w2, this.h2 + 75, false, true, true, false);
         thaliak.scale = 2.5;
         thaliak.render.scale = 2.5;
         thaliak.addDialogue([], [], [], [], 'interrogation1')
         thaliak.setDepth(2);
         thaliak.render.setDepth(1);
 
-        let door = new storyObject(this, 'door', this.w2, 300, false, false, false, true);
+        let door = new storyObject(this, 'i2door', this.w2 + 35, 0, false, false, false, true);
+        door.setOrigin(.5, 0);
+        door.render.setOrigin(.5, 0)
+        door.scale = 4;
+        door.render.scale = 4;
         door.setDoor('interro3', ["interrogated"], [], [], []);
         door.on('pointerover', () => {
             door.playAnim('open');
@@ -651,7 +659,7 @@ class MainMenu extends Phaser.Scene{
     create(){
         this.debug = false;
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'mmbg');
+        this.bg = this.add.image(this.w2, this.h2, 'titlescreen');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
@@ -720,6 +728,7 @@ class Loader extends Phaser.Scene{
         //basic images
         this.load.image('menu', `${spPath}/menutab.png`);
         this.load.image('mmbg', `${bgPath}/TitleScreen.png`);
+        this.load.image('titlescreen', `${bgPath}/TitleScreenTitle.png`)
         this.load.image('intro1bg', `${bgPath}/intro1.png`);
         this.load.image('intro2bg', `${bgPath}/intro2.png`);
         this.load.image('intro3bg', `${bgPath}/intro3.png`);
@@ -782,9 +791,14 @@ class Loader extends Phaser.Scene{
             frameHeight: 160,
         });
 
-        this.load.spritesheet('door', `${spPath}/door.png`,{
-            frameWidth: 229,
-            frameHeight: 381,
+        this.load.spritesheet('i1door', `${spPath}/int1door114x187.png`,{
+            frameWidth: 114,
+            frameHeight: 187,
+        });
+
+        this.load.spritesheet('i2door', `${spPath}/int2door267x163.png`,{
+            frameWidth: 267,
+            frameHeight: 163,
         });
 
         this.load.spritesheet('hubdoor', `${spPath}/hubdoor205x189.png`,{
