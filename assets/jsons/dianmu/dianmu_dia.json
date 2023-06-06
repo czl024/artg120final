@@ -1,12 +1,12 @@
 {
     "dialogue": {
         "intro1": {
-            "flags": [],
+            "flags": ["dianmu visited"],
             "items": [],
             "itemsRemoved": [],
             "sprite": "",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "The Thaliak feels like a portal to wherever you need to be at this point.",
                 "Dianmu is blindingly snowy, though the hub seems to be shockingly warm.",
@@ -122,8 +122,49 @@
             "animation": "",
             "text": [
                 "So, uh.",
-                "One more planet to go before you have met your necessary acquaintences.",
+                "One more planet to go before you have met your necessary acquaintences."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": "jimmyleave2"
+        },
+        "jimmyleave2": {
+            "flags": ["dianmu ready to leave"],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
                 "Ready to depart?"
+            ],
+            "links": ["leave", "stay"],
+            "linktext": {"leave": "Yes.", "stay": "No."},
+            "quietLink": ""
+        },
+        "leave": {
+            "flags": ["leaving dianmu"],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "Off we go, then."
+            ],
+            "links": [],
+            "linktext": {},
+            "quietLink": ""
+        },
+        "stay": {
+            "flags": [],
+            "items": [],
+            "itemsRemoved": [],
+            "sprite": "",
+            "nameplate": "Jimmy",
+            "animation": "",
+            "text": [
+                "L-let me know when you are good to go."
             ],
             "links": [],
             "linktext": {},

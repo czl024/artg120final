@@ -306,6 +306,7 @@ class Argus extends GameScene{
 
     afterCreate(){
         this.debug = true;
+        if(this.debug) this.goToScene('dianmu')
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'argusbg');
         this.bg.setOrigin(.5);
@@ -356,19 +357,28 @@ class Dianmu extends GameScene{
     constructor(){ super('dianmu', "it location") };
 
     afterCreate(){
+        this.debug = true;
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'dianmubg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        let door = new storyObject(this, 'dianmudoor', this.w2, this.h2, false, false, false, true);
+        let door = new storyObject(this, 'dianmudoor', 740, 700, false, false, false, true);
+        door.setDoor('dianmuoffice', [], ["dianmu head met"], [], []);
+        door.setDepth(2);
+        door.render.setDepth(1);
+        door.scale = 4;
+        door.render.scale = 4;
 
-        this.startDialogue('', () => {
-            
-        })
+        if(!this.hasFlag("dianmu visited")){
+                this.startDialogue('intro1', () => {})
+        }
 
-        let jimmy = new storyObject(this, 'jimmy', this.w2, this.h2, false, true, false, false);
-        jimmy.addDialogue([], [], [], [], '');
+        let jimmy = new storyObject(this, 'jimmy', 500, 700, false, true, false, true);
+        jimmy.addDialogue(["dianmu head met"], [], [], [], 'jimmyleave');
+        jimmy.addDialogue(["dianmu ready to leave"], [], [], [], 'jimmyleave2');
+        jimmy.addDialogue([], [], [], [], 'jimmy1');
+        jimmy.setDoor('ikeithea', ["leaving dianmu"], [], [], [])
     }
 
     sceneTransition(){
@@ -382,12 +392,29 @@ class DianmuOffice extends GameScene{
     constructor(){ super('dianmuoffice', "it office") };
 
     afterCreate(){
+        //this.debug = true;
+        if(this.debug){
+            this.addFlag("dianmu head met");
+            this.goToScene('dianmu');
+        }
         //bg
         this.bg = this.add.image(this.w2, this.h2, 'dianmuofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
 
-        this.startDialogue('', () => {});
+        this.startDialogue('intro1', () => {
+            let outText = this.add.text(this.w2, 9 * this.h2 / 5, "Go back outside.", {
+                fontFamily: 'bahn',
+                fontSize: 75,
+                color: '#F0F0F0',
+                align: 'center'
+            });
+            outText.setOrigin(.5);
+            outText.setInteractive();
+            outText.on('pointerover', () => { outText.alpha = .8 })
+            outText.on('pointerout', () => { outText.alpha = 1 })
+            outText.on('pointerdown', () => { this.goToScene('dianmu') });
+        });
     }
 
     sceneTransition(){
@@ -402,7 +429,7 @@ class Ikeithea extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'ikeithea');
+        this.bg = this.add.image(this.w2, this.h2, 'ikeitheabg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -419,7 +446,7 @@ class IkeitheaOffice extends GameScene{
 
     afterCreate(){
         //bg
-        this.bg = this.add.image(this.w2, this.h2, 'ikeithea');
+        this.bg = this.add.image(this.w2, this.h2, 'ikeitheaofficebg');
         this.bg.setOrigin(.5);
         this.bg.scale = 4;
     }
@@ -543,7 +570,7 @@ class Loader extends Phaser.Scene{
         this.load.image('argusbg', `${bgPath}/StationOrbitingBrownDwarf.png`);
         this.load.image('argusofficebg', `${bgPath}/InternalAstronomyOffice.png`);
         this.load.image('dianmubg', `${bgPath}/FrozenPlanet.png`);
-        this.load.image('dianmuofficebg', `${bgPath}/InternalAstronomyOffice.png`);
+        this.load.image('dianmuofficebg', `${bgPath}/GalacticNetworkOffice.png`);
         this.load.image('ikeitheabg', `${bgPath}/UnderwaterCity.png`);
         this.load.image('ikeitheaofficebg', `${bgPath}/PreLightspeedManagementOffice.png`);
 
