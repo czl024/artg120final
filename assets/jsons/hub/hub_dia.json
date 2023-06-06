@@ -20,7 +20,7 @@
             "itemsRemoved": [],
             "sprite": "thaliak",
             "nameplate": "Thaliak",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "Alright, while we refuel, I need to get some paperwork done.",
                 "Jimmy, if you wouldn't mind showing our ambassador around and getting everyone a coffee?"
@@ -35,7 +35,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "A-ah, alright.",
                 "I suppose the hub is an Earthly equivalent to a gas station and airport?",
@@ -66,7 +66,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "It is not difficult to get lost here",
                 "though it is not difficult to find your way back.",
@@ -93,7 +93,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Just like Thaliak."
             ],
@@ -107,7 +107,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "Ah, same preference as I…"
             ],
@@ -121,7 +121,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "O-oh.",
                 "Okay…intereesting…"
@@ -136,7 +136,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "The coffee shop is over there.",
                 "The line looks lengthy, though.",
@@ -154,7 +154,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "H-hello.",
                 "I have also, uh.",
@@ -171,7 +171,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "He bows as he holds out a donut for you to take.",
                 "Take it?"
@@ -192,7 +192,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "happy",
             "text": [
                 "It is, uh",
                 "It is the least I could do.",
@@ -209,7 +209,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "A-ah…",
                 "Ok…",
@@ -225,7 +225,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "A-anyways, we will be departing for Argus."
             ],
@@ -241,7 +241,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "neutral",
             "text": [
                 "A-are you ready to depart?"
             ],
@@ -278,7 +278,7 @@
             "itemsRemoved": [],
             "sprite": "jimmy",
             "nameplate": "Jimmy",
-            "animation": "",
+            "animation": "sad",
             "text": [
                 "Wha-",
                 "O-okay."
